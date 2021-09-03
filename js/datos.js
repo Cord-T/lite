@@ -1,0 +1,1 @@
+username = localStorage.getItem("name");

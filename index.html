@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="redirigir" http-equiv="Refresh" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lite</title>
+</head>
+<body>   
+
+    <div onclick="recognition.start()" id="particles-js"></div>
+    <!-- cabeza de lite -->
+     
+
+    <div class="lite">
+    <div class="cara" id="cara">
+        <div class="orejita1"></div>
+        <div class="orejita2"></div>
+        <div class="cutte_kitten"></div>
+        <div class="ojos">
+            <div class="ojo ojo1" onclick="pestañear()" id="ojo1"></div>
+            <div class="ojo ojo2"  onclick="pestañear()" id="ojo2"></div>
+        </div>
+        <div class="voca" id="voca"></div>
+    
+    </div>
+</div>
+<!-- nucleo extractor de info -->
+    <div class="nucleo oculto" id="nucleo">
+ <div class="square" id="square">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="eye" id="eye" ></div>
+            <!-- Cubos decorativos -->
+            <div class="cubes" id="cube_container">
+            <div class="cub1"></div>
+            <div class="cub2"></div>
+                        <div class="cub3"></div>
+                        <div class="cub4"></div>
+                        <div class="cub5"></div>
+                        <div class="cub6"></div>
+                        <div class="cub7"></div>
+                        <div class="cub8"></div>
+                </div>
+            </div>
+
+</body>
+<!-- Cerebro de lith -->
+<!-- base de datos recopilados mediante el uso  -->
+<script src="js/datos.js"></script>
+<!-- variables usadas frecuentemente -->
+<script src="js/variables.js"></script>
+<!-- funciones que se ejecutan al cargar la pagina -->
+<script src="js/on_start_functions.js"></script>
+<!-- reconocimiento de voz y traduccion de esta  -->
+<script src="js/voice_reconociment.js"></script>
+<!-- funciones y herramientas de lith -->
+<script src="js/funciones.js"></script>
+<!-- reconocimiento de comandos y activacion de estos -->
+<script src="js/comandos.js"></script>
+<!-- sistema de voz de lith  -->
+<script src="js/speak_system.js"></script>
+
+<script src="js/particulas.js/particles.js"></script>
+<script src="js/particulas.js/app.js"></script>
+</html>
