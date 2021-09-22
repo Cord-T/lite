@@ -12,41 +12,60 @@
 
     <div onclick="recognition.start()" id="particles-js"></div>
     <!-- cabeza de lite -->
-     
+    <div class="botonConfig" onclick="sacarOptionsMenu()"></div>
+    <div class="optionsMenu oculto" id="optionsMenu">
+        <p>Particulas:</p>
+        <select id="seleccionarParticulas">
+            <!-- selecciona la cantidad de particulas  -->
+            <option value="0" label="Apagadas"> </option>
+            <option value="10" label="Minimas"> </option>
+            <option value="40" label="Medas(Cuidado)"> </option>
+            <option value="110" label="Altas(Mas consumo)"> </option>
+        </select>
 
-    <div class="lite">
-    <div class="cara" id="cara">
-        <div class="orejita1"></div>
-        <div class="orejita2"></div>
-        <div class="cutte_kitten"></div>
-        <div class="ojos">
+        <button onclick="cambiarCantDeParticulas()">Aplicar</button>
+        <button onclick="sacarOptionsMenu()">Cerrar</button>
+        <button onclick="sacarOptionsMenu()">Aceptar</button>
+    </div>
+  
+    <div class="liteHead " id="LiteHead">
+        <div class="orejaA" id="orejaA"></div>
+        <div class="orejaB" id="orejaB"></div>
+        <div class="cabeza"></div>
+        <div class="ojos" id="ojos">
             <div class="ojo ojo1" onclick="pestañear()" id="ojo1"></div>
             <div class="ojo ojo2"  onclick="pestañear()" id="ojo2"></div>
         </div>
         <div class="voca" id="voca"></div>
+
     
     </div>
+    <div class="loading oculto" id="loadingScreen">
+        <div class="blocks" style="--i:1;"></div>
+        <div class="blocks" style="--i:2;"></div>
+        <div class="blocks" style="--i:3;"></div>
+        <div class="blocks" style="--i:4;"></div>
+        <div class="blocks" style="--i:5;"></div>
+        <div class="blocks" style="--i:6;"></div>
+        <div class="blocks" style="--i:7;"></div>
+        <div class="blocks" style="--i:8;"></div>
+        <div class="blocks" style="--i:9;"></div>
+        <div class="blocks" style="--i:10;"></div>
+        <div class="blocks" style="--i:11;"></div>
+        <div class="blocks" style="--i:12;"></div>
+        <div class="blocks" style="--i:13;"></div>
+        <div class="blocks" style="--i:14;"></div>
+        <div class="blocks" style="--i:15;"></div>
+        <div class="blocks" style="--i:16;"></div>
+        <div class="blocks" style="--i:17;"></div>
+        <div class="blocks" style="--i:18;"></div>
+        <div class="blocks" style="--i:19;"></div>
+        <div class="blocks" style="--i:20;"></div>
+    </div>
+
+    
+    
 </div>
-<!-- nucleo extractor de info -->
-    <div class="nucleo oculto" id="nucleo">
- <div class="square" id="square">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="eye" id="eye" ></div>
-            <!-- Cubos decorativos -->
-            <div class="cubes" id="cube_container">
-            <div class="cub1"></div>
-            <div class="cub2"></div>
-                        <div class="cub3"></div>
-                        <div class="cub4"></div>
-                        <div class="cub5"></div>
-                        <div class="cub6"></div>
-                        <div class="cub7"></div>
-                        <div class="cub8"></div>
-                </div>
-            </div>
 
 </body>
 <!-- Cerebro de lith -->

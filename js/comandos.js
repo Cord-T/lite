@@ -60,7 +60,7 @@ function comandos(cmd) {
     }
     else if (cmd.includes("te") && cmd.includes("toca") && cmd.length < 20 || cmd.includes("turno")  && cmd.length < 15) {
         if (in_game == true) {
-            respuesta = "listo";
+            respuesta = ".";
             jugar_ludo();
         }
         else{

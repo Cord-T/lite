@@ -21,9 +21,9 @@
 function hablar(respuesta) {
     respuesta.voice;
     speechSynthesis.speak( new SpeechSynthesisUtterance(respuesta));
-    let r_l = respuesta.length;
-    r_l = r_l / 4.5
-    animacion_hablar(r_l)
+    // let r_l = respuesta.length;
+    // r_l = r_l / 4.5
+    animacionHablar(respuesta.length/4.5)
     console.log(respuesta.text); 
     
 }
