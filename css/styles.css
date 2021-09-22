@@ -30,7 +30,7 @@ body{
     cursor: pointer;
 }
 .optionsMenu{
-    position: absolute;
+    position: fixed;
     right: 2%;
     top: 2%;
     background-color: rgba(255, 255, 255, 0.336);
@@ -319,7 +319,18 @@ animation: epicshadow 20s linear infinite;
     transform: scale(3);
     }
 
-
+.loading{
+    transform: scale(0.8);
+    top: 29%;
+}
+.botonConfig{
+    width: 10vw;
+    height: 10vw;
+}
+.loading .blocks{
+    width: 4vw;
+    height: 6vw;
     
+}
 
 }
