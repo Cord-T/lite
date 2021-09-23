@@ -1,26 +1,27 @@
 function comandos(cmd) {
     // comandos interactivos
     if (cmd.indexOf('hola') === 0 && cmd.length < 15|| cmd.indexOf('que onda') > -1 && cmd.length < 30 || cmd.indexOf('que hay') > -1 && cmd.length < 20) {
-        respuesta    = 'Hola como estas';
+        respuesta = 'Hola como estas';
+       animaciones("sonreir")
     }
     else if (cmd.indexOf('como estas') > -1 && cmd.length < 25|| cmd.indexOf('que tal estas') > -1 && cmd.length < 25 || cmd.indexOf('como te encuentras') > -1 && cmd.length < 25 || cmd.indexOf('como andas') > -1 && cmd.length < 25) {
-        respuesta = '¡Muy bien! ¡Gracias por preguntar';
+        respuesta = '¡Muy bien! ¡Gracias por preguntar!';
+        animaciones("alegrarse");
     } 
     else if (cmd.indexOf('mi nombre') > -1 || cmd.indexOf('me llamo') > -1){
             let nombre = cmdSimplifyToName(cmd);
             localStorage.setItem("haynombre", "si")
             localStorage.setItem("name"," "+(nombre));
-            respuesta = 'Mucho gusto '+nombre+ ' yo soy Lith';
+            respuesta = 'Mucho gusto '+nombre+ ' yo soy Lite';
             
        
     }
     else if (cmd. indexOf('quien eres') > -1  || cmd.indexOf('que eres') > -1 || cmd.indexOf('presentate') > -1){
-        respuesta = "Soy un asistente por voz echo completamente en Html, Javascript y Css, y mi nombre es Lith, existo nada mas para ayudar y cumplir ciertas tareas"
+        respuesta = "Soy un asistente por voz echo completamente en Html, Javascript y Css, y mi nombre es Lite, existo nada mas para ayudar y cumplir ciertas tareas"
     }
     else if (cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1  || cmd.indexOf('tira un chiste') > -1  || cmd.indexOf('sacate un chiste') > -1) {
         respuesta = chistes[numero_aleatorio(10)];
-        
-        repitechiste = chistes;
+        animaciones("alegrarse");
     }
      else if (cmd.indexOf("repite despues de mi") > -1 || cmd.indexOf('di despues de mi') === 0) {
         repetir = cmd;
@@ -35,14 +36,18 @@ function comandos(cmd) {
             }
     
     else if (cmd.includes("enamorado") && cmd.length < 20 || cmd.includes("enamorada") && cmd.length < 20 || cmd.includes("te gusta alguien") && cmd.length < 19 || cmd.includes("te gusto") && cmd.length < 19 ) {
-    respuesta = "El amor... segun la definicion de los humanos, consta de 4 cosas: Admiracion, Atraccion, Devocion y Respeto, En conclusion, estoy enamorada un 50%"
+    respuesta = "El amor... segun la definición de los humanos, consta de 4 cosas: Admiración, Atracción, Devoción y Respeto, En conclusión, estoy enamorada un 50%"
+    setTimeout(() => {
+        animaciones("alegrarse")
+    }, 9000);
     }
     else if (cmd.includes("quien") && cmd.includes("creo") && cmd.length < 25 || cmd.includes("quien") && cmd.includes("creador") && cmd.length < 25) {
-    respuesta = "Todo el mundo ha sido creado, formado y modificado, aca estoy yo, siendo solamente una maquina de comandos y ayudas. Mi creador solo es uno mas de todas las especies humanas, pero no me permite decir quien es, prefiere dejar que los que de verdad buscan sepan de el"
+    respuesta = "Todo el mundo ha sido creado, formado y modificado, aca estoy yo, siendo solamente una maquina de comandos y ayudas. Mi creador solo es uno mas de todos los seres humanos, pero no me permite decir quien es, prefiere dejar que los que de verdad buscan sepan de el"
     // atenta mente Victor Varela
     }
     else if (cmd.includes("buenas") && cmd.includes("noches") && cmd.length < 25 || cmd.includes("hasta") && cmd.includes("mañana") && cmd.length < 25) {
         respuesta = "Buenas noches"+username+", que tengas una bonita noche"
+        animaciones("sonreir");
 
         }
         else if (cmd.includes("buen") && cmd.includes("dia") && cmd.length < 25 || cmd.includes("buenos") && cmd.includes("dias") && cmd.length < 25) {
@@ -51,10 +56,20 @@ function comandos(cmd) {
             }
 
     //comandos de utilidades
+
+    else if (cmd.indexOf('busca informacion sobre un archivo de video llamado') > -1 ){
+        cmd = cmd.replace("busca informacion sobre un archivo de video llamado", "");
+        wink()
+        respuesta = "de acuerdo, iniciando busqueda avanzada";
+        window.open("https://www.google.com/search?q="+cmd+"+-inurl%3A%28htm%7Chtml%7Cphp%7Cpls%7Ctxt%29+intitle%3Aindex.of+%22last+modified%22+%28mp4%7Cwmv%7Caac%7Cavi%29&rlz=1C1CHBF_esVE969VE969&sxsrf=AOaemvK21bXbEbAEEB2Ihg6LBBI-1QACiw%3A1632405073724&ei=UYZMYdPFK5aNwbkPs5ilwAY&oq=avengers+-inurl%3A%28htm%7Chtml%7Cphp%7Cpls%7Ctxt%29+intitle%3Aindex.of+%22last+modified%22+%28mp4%7Cwmv%7Caac%7Cavi%29&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANKBAhBGABQzq0OWLGuDmCKsg5oAXACeACAAQCIAQCSAQCYAQCgAQHIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwiTsrHknpXzAhWWRjABHTNMCWgQ4dUDCA4&uact=5")
+    }
+
     else if (cmd.includes("tira") && cmd.includes("dado") && cmd.length < 15 || cmd.includes("lanza") && cmd.includes("dado") && cmd.length < 15) {
-        respuesta = "el dado ha sido lanzado y salio"+lanzar_dado();
+        respuesta = "el dado ha sido lanzado, y salió"+lanzar_dado();
+        animaciones("alegrarse");
     }
     else if (cmd.includes("jugemos") && cmd.includes("ludo") && cmd.length < 20 || cmd.includes("ludo")  && cmd.length < 20) {
+        animaciones("alegrarse");
         respuesta = "De acuerdo hora de jugar ludo!, avisenme cuando me toque porfavor"
         in_game = true;
     }
@@ -69,8 +84,8 @@ function comandos(cmd) {
     }
     else if (cmd.includes("eliminaron") && cmd.includes("pieza") && cmd.length < 35 || cmd.includes("elimine") && cmd.includes("pieza")  && cmd.length < 35) {
     if (in_game == true) {
-        
-    respuesta = "rayos, uno menos para mi fabuloso equipo de mini lites"
+        animaciones("deprimirse");
+    respuesta = "rayos, uno menos para mi fabuloso equipo de miní lites"
     
         if (cmd.includes("1") || cmd.includes("primer") || cmd.includes("primera")) {
         fi1 = "dead";
@@ -86,10 +101,11 @@ function comandos(cmd) {
     }
 }
 else{
-    respuesta = "a quien eliminaron?, perdon no encuentro el contexto de esta conversacion"
+    respuesta = "a quien eliminaron?, perdon, no encuentro el contexto de esta conversación"
 }
     } 
     else if (cmd.includes("gane") && cmd.length < 15 || cmd.includes("gano") && cmd.length < 15 ) {
+        animaciones("deprimirse");
         respuesta = "rayos, e... e perdido, bueno, era obvio, una simple maquina como yo le costara un mundo ganarle a un ser tan poderoso como el ser humano, fabulosa partida "
         my_turn == false;
         in_game == false;
@@ -98,21 +114,6 @@ else{
         respuesta = "son las "+hour+" con "+minutes+" minutos"
     }
                     //configuracion de usuario
-    // else if (cmd.includes("desactiva") && cmd.includes("visualizacion") && cmd.length < 50 || cmd.includes("quita") && cmd.includes("visualizacion") && cmd.length < 50 || cmd.includes("inactiva") && cmd.includes("visualizacion") && cmd.length < 50) {
-    //     vdtxt = 1;
-    //     console.log(cmd.length)
-    //     document.getElementById("cuadrotexto").classList.add("oculto2");
-    //     localStorage.setItem("visualizaciondetexto",(vdtxt));
-        
-    //     respuesta = "Visualizaciòn de texto desactivada correctamente"
-    // }
-    // else if (cmd.includes("activa") && cmd.includes("visualizacion") && cmd.length < 50 || cmd.includes("reactiva") && cmd.includes("visualizacion") && cmd.length < 50 ) {
-    //     vdtxt = 0;
-    //     document.getElementById("cuadrotexto").classList.remove("oculto2");
-    //     localStorage.setItem("visualizaciondetexto", (vdtxt));
-        
-    //     respuesta = "Visualizaciòn de texto activada correctamente"
-    // }
     if (cmd.includes("quita") && cmd.includes("tutorial") && cmd.length < 40|| cmd.includes("desactiva") && cmd.includes("tutorial") && cmd.length < 40 || cmd.includes("inactiva") && cmd.includes("tutorial") && cmd.length < 50) {
         localStorage.setItem("tutorial", "no");
         
@@ -131,7 +132,7 @@ else{
                     //buscar en diversas plataformas
     else if (cmd. indexOf('busca en google') > -1 || cmd.indexOf('buscar en google') > -1){
         url = cmd;
-        guiñar();
+        wink();
         url = url.replace("busca en google", "");
         url = url.replace("buscar en google", "");
         respuesta = "¡Ok"+username+"! buscando en google"+url;
@@ -139,7 +140,7 @@ else{
     }
     else if (cmd. indexOf('busca en youtube') > -1 || cmd. indexOf('busca') > -1 && cmd. indexOf('youtube') > -1){
         url = cmd;
-        guiñar();
+        wink();
         url = url.replace("en", ""); 
         url = url.replace("busca", ""); 
         url = url.replace("youtube", ""); 
@@ -148,7 +149,7 @@ else{
     }
     else if (cmd.indexOf("busca en la pagina de los testigos de jehova") > -1){
         url = cmd;
-        guiñar();
+        wink();
         url = url.replace("busca en la pagina de los testigos de jehova", ""); 
         url = url.replace(".", ""); 
         respuesta = "¡Ok"+username+"! buscando en la J doble v"+url;
@@ -156,7 +157,7 @@ else{
     }
     else if (cmd. indexOf('busca en la tienda de facebook') > -1){
         url = cmd;
-        guiñar();
+        wink();
         url = url.replace("busca en la tienda de facebook", ""); 
         respuesta = "¡Ok"+username+"! buscando en facebook market place"+url;
         window.open('https://www.facebook.com/marketplace/103740209665322/search/?query='+url);   
@@ -164,50 +165,48 @@ else{
                     //habrir aplicaciones y redes sociales
     else if (cmd.indexOf("abrir google") > -1 || cmd.indexOf('abre google') > -1 || cmd.indexOf('busca google') > -1 || cmd.indexOf('ir a google') > -1){
         window.open('https://google.com/'); 
-        guiñar();
+        wink();
         respuesta = "¡Ok"+username+"! Abriendo google.";
     }                
     else if (cmd.indexOf("abrir youtube") > -1 || cmd.indexOf('abre youtube') > -1 || cmd.indexOf('busca youtube') > -1 || cmd.indexOf('ir a youtube') > -1 ){
         window.open('https://www.youtube.com/'); 
-        guiñar();
+        wink();
         respuesta = "¡Ok"+username+"! Abriendo YouTube.";
     }
     else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1 || cmd.indexOf('busca whatsapp') > -1 || cmd.indexOf('ir a whatsapp') > -1){
         window.open('https://web.whatsapp.com/');
-        guiñar();
+        wink();
         respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
     }
     else if (cmd.indexOf("abrir facebook") > -1 || cmd.indexOf('abre facebook') > -1 || cmd.indexOf('busca facebook') > -1 || cmd.indexOf('ir a facebook') > -1){
         window.open('https://www.facebook.com/'); 
-        guiñar();
+        wink();
         respuesta = "¡Ok"+username+"! Abriendo Facebook.";
 
     }
     else if (cmd.indexOf("abrir instagram") > -1 || cmd.indexOf('abre instagram') > -1 || cmd.indexOf('busca instagram') > -1 || cmd.indexOf('ir a instagram') > -1){
         window.open('https://www.instagram.com/'); 
-        guiñar();
+        wink();
         respuesta = "¡Ok"+username+"! Abriendo Instagram.";
 
     }
     else if (cmd.indexOf("abrir twitter") > -1 || cmd.indexOf('abre twitter') > -1 || cmd.indexOf('busca twitter') > -1 || cmd.indexOf('ir a twitter') > -1){
         window.open('https://twitter.com/?lang=es'); 
-        guiñar();
+        wink();
         respuesta = "¡Ok"+username+"! Abriendo Twitter.";
 
     }
     else if (cmd.indexOf("abrir discord") > -1 || cmd.indexOf('abre discord') > -1 || cmd.indexOf('busca discord') > -1 || cmd.indexOf('ir a discord') > -1) {
         window.open('https://discord.com/app'); 
-        guiñar();
+        wink();
         respuesta = "¡Ok"+username+"! Abriendo Discord.";
     }
     else if (cmd.indexOf("abre") > -1 && cmd.indexOf("testigos de jehova") > -1 || cmd.indexOf('abrir') > -1 && cmd.indexOf("testigos de jehova") > -1 || cmd.indexOf('ir') > -1 && cmd.indexOf('testigos de jehova') > -1) {
         window.open('https://www.jw.org/es/'); 
-        guiñar();
+        wink();
         respuesta = "¡Ok"+username+"! Abriendo la página principal de los Testigos de Jehova.";
-
-    
-    
     }
+    
                         //recordar eventos
     else if (cmd.indexOf("mi recordatorio") > -1 || cmd.indexOf('lee mi agenda') > -1 || cmd.indexOf('que hay') > -1 && cmd.indexOf('agenda') > -1) {
         if (remember === "") {
@@ -304,8 +303,8 @@ else{
     
     else if (cmd.indexOf("modo escritura") > -1 || cmd.indexOf('modo escribir') > -1 || cmd.indexOf('modo voz a texto') > -1 ){
         window.open();
-        guiño();
-        respuesta = "¡Ok"+username+"! iniciando el modo escritura.";
+        wink();
+        respuesta = "¡Ok"+username+"! inicíando el modo escritura.";
 
     }
 
@@ -313,7 +312,8 @@ else{
     
 // buscar lo que el usuario diga sin necesidad de google
    if (respuesta === ""){
-       respuesta = "Aparentemente no tengo respuesta a tu comando, asi que lo buscare en google";
+       animaciones("deprimirse");
+       respuesta = "Aparentemente no tengo respuesta a tu comando, así que lo buscare en google";
        window.open('https://www.google.com/search?q='+cmd);  
     }
 

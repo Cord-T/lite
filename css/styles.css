@@ -65,6 +65,19 @@ body{
         }
 }
 /* ventanas  */
+.ventanaBusqueda{
+    top: 10%;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 10vw;
+    border-radius: 2vw;
+    background-color: rgba(255, 235, 205, 0.39);
+    box-shadow: 0 0 50px rgba(255, 235, 205, 0.418);
+}
 
 .optionsMenu{
     border-radius: 1vw;
@@ -182,23 +195,7 @@ animation: epicshadow 20s linear infinite;
     
 }
 /* animaciones y clases para activarlas */
-.hablar{
-    animation: hablar 0.3s ease; 
- }
-@keyframes hablar {
-    0%{
-        top: 25%;
-        border-bottom: 2vw solid white;
-    }
-    50%{
-        top: 27%;
-        border-bottom: 0.1vw solid white;
-    }
-    100%{
-        top: 25%;
-        border-bottom: 2vw solid white;
-    }
-}
+
 .parpadear{
     animation: parpadear 0.5s ease; 
 }
@@ -347,9 +344,57 @@ animation: epicshadow 20s linear infinite;
 
 
 
-.bajarOrejas{
-    transition: top 2s;
-    top: 40%;
+.bajarOrejaI{
+    animation: bajarOrejaI 3s ease;
+}
+
+@keyframes bajarOrejaI {
+    0%
+    {
+        top:-15%;
+        transform: rotate(0deg);
+    }
+    15%
+    {
+        top:25%;
+        transform: rotate(10deg);
+    }
+    85%
+    {
+        top:25%;
+        transform: rotate(10deg);
+    }
+    100%
+    {
+        top:-15%;
+        transform: rotate(0deg);
+    }
+}
+.bajarOrejaD{
+    animation: bajarOrejaD 3s ease;
+}
+
+@keyframes bajarOrejaD {
+    0%
+    {
+        top:-15%;
+        transform: rotate(0deg);
+    }
+    15%
+    {
+        top:25%;
+        transform: rotate(-10deg);
+    }
+    85%
+    {
+        top:25%;
+        transform: rotate(-10deg);
+    }
+    100%
+    {
+        top:-15%;
+        transform: rotate(0deg);
+    }
 }
 
 .despertarOjos{
@@ -445,7 +490,7 @@ animation: epicshadow 20s linear infinite;
 
 
 .forzarOjos{
-    animation: forzarOjos 5s ease;
+    animation: forzarOjos 3s ease;
 }
 @keyframes forzarOjos {
     0%{
@@ -467,7 +512,7 @@ animation: epicshadow 20s linear infinite;
 }
 
 .aburrirOjos{
-animation: aburrirOjos 5s ease;
+animation: aburrirOjos 3s ease;
 }
 
 @keyframes aburrirOjos {
@@ -495,7 +540,7 @@ animation: aburrirOjos 5s ease;
 
 
 .entristecerVoca{
-   animation: entristecerVoca 5s ease;
+   animation: entristecerVoca 3s ease;
 }
 @keyframes entristecerVoca {
     0%{
@@ -521,7 +566,7 @@ animation: aburrirOjos 5s ease;
 }
 
 .sonreir{
-    animation: sonreir 5s ease;
+    animation: sonreir 3s ease;
 }
 @keyframes sonreir {
     0%{
@@ -551,7 +596,7 @@ animation: aburrirOjos 5s ease;
 }
 
 .agitarOrejaA{
-    animation: agitarOrejaA 2s ease;
+    animation: agitarOrejaA 1.5s ease;
 }
 @keyframes agitarOrejaA {
     0%{
@@ -592,7 +637,7 @@ animation: aburrirOjos 5s ease;
     }
 }
 .agitarOrejaB{
-    animation: agitarOrejaB 2s ease;
+    animation: agitarOrejaB 1.5s ease;
 }
 @keyframes agitarOrejaB {
     0%{
@@ -633,7 +678,62 @@ animation: aburrirOjos 5s ease;
     }
 }
 
+.hablar{
+    animation: hablar 0.3s ease; 
+ }
+@keyframes hablar {
+    0%{
+        top: 25%;
+        border-bottom: 2vw solid white;
+    }
+    50%{
+        top: 27%;
+        border-bottom: 0.1vw solid white;
+    }
+    100%{
+        top: 25%;
+        border-bottom: 2vw solid white;
+    }
+}
 
+.moverOjosAD{
+    animation: moverOjosAD 3s ease;
+}
+@keyframes moverOjosAD {
+    0%
+    {
+        left: 12.5%;
+    }
+    15%{
+        left: 8%;
+    }
+    85%{
+        left: 8%;
+    }
+    
+    100%{
+        left: 12.5%;
+    }
+}
+.moverOjosAI{
+    animation: moverOjosAI 3s ease;
+}
+@keyframes moverOjosAI {
+    0%
+    {
+        left: 12.5%;
+    }
+    15%{
+        left: 16%;
+    }
+    85%{
+        left: 16%;
+    }
+    
+    100%{
+        left: 12.5%;
+    }
+}
 
 
 

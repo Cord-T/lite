@@ -31,150 +31,6 @@ function start_lite(iniciarOApagar) {
  
     
  }
-
-
-function animacionDespertar() {
-    let voca = document.getElementById("voca");
-    let ojo1 = document.getElementById("ojo1");
-    let ojo2 = document.getElementById("ojo2");
-    let orejaA = document.getElementById("orejaA");
-    let orejaB = document.getElementById("orejaB");
-
-    voca.classList.add("despertarVoca");
-    ojo1.classList.add("despertarOjos");
-    ojo2.classList.add("despertarOjos");
-    orejaA.classList.add("despertarOreja1");
-    orejaB.classList.add("despertarOreja2");
-    setTimeout(function () {
-        voca.classList.remove("despertarVoca");
-        ojo1.classList.remove("despertarOjos");
-        ojo2.classList.remove("despertarOjos");
-        orejaA.classList.remove("despertarOreja1");
-        orejaB.classList.remove("despertarOreja2"); 
-    },15000)
-}
-
-function wink() {
-    let ojo1 = document.getElementById("ojo1");
-    ojo1.classList.add("parpadear");
-    setTimeout(        function () {
-        ojo1.classList.remove("parpadear")  
-    },500)   
-}
-
-function animacionHablar(veces_a_repetir) {
-    let voca = document.getElementById("voca");
-    let v = 0;
-    let hablar = setInterval(() => {
-     
-        if (v < veces_a_repetir) {
-          
-        }else{    
-        clearInterval(hablar);
-        }
-
-        voca.classList.add("hablar");
-        setTimeout(        function () {
-            voca.classList.remove("hablar")  
-        },300)
-    //   f = 0
-         v++
-     }, 320);
-}
-
-function despertar() {
-    let ultimaDespertada = localStorage.getItem("ultimaDespertada");
-    console.log(ultimaDespertada)
-    if (ultimaDespertada !== hoy) {
-        localStorage.setItem("ultimaDespertada", hoy);
-        animacionDespertar();
-    }else{}
-}
-
-function pestañear() {
-    let ojo1 = document.getElementById("ojo1");
-    let ojo2 = document.getElementById("ojo2");
-    ojo1.classList.add("parpadear");
-    setTimeout(        function () {
-        ojo1.classList.remove("parpadear")  
-    },500)
-    ojo2.classList.add("parpadear");
-    setTimeout(        function () {
-        ojo2.classList.remove("parpadear")  
-    },500)
-}
-
-function forzarOjos() {
-    let ojo1 = document.getElementById("ojo1");
-    let ojo2 = document.getElementById("ojo2");
-    ojo1.classList.add("forzarOjos");
-    setTimeout(        function () {
-        ojo1.classList.remove("forzarOjos")  
-    },5000)
-    ojo2.classList.add("forzarOjos");
-    setTimeout(        function () {
-        ojo2.classList.remove("forzarOjos")  
-    },5000)
-}
-function aburrirOjos(params) {
-    let ojo1 = document.getElementById("ojo1");
-    let ojo2 = document.getElementById("ojo2");
-    ojo1.classList.add("aburrirOjos");
-    setTimeout(        function () {
-        ojo1.classList.remove("aburrirOjos")  
-    },5000)
-    ojo2.classList.add("aburrirOjos");
-    setTimeout(        function () {
-        ojo2.classList.remove("aburrirOjos")  
-    },5000)
-}
-
-function entristecerVoca() {
-    let voca = document.getElementById("voca");
-    voca.classList.add("entristecerVoca");
-    setTimeout(        function () {
-        voca.classList.remove("entristecerVoca")  
-    },5000)
-}
-function sonreir(){
-    let voca = document.getElementById("voca");
-    voca.classList.add("sonreir");
-    setTimeout(        function () {
-        voca.classList.remove("sonreir")  
-    },5000)
-}
-
-function animaciones(animacion){
-
-    switch (animacion) {
-            case "wink" :
-            wink()
-            break;
-            case "pestañear" :
-            pestañear()
-            break;
-            case "forzar ojos" :
-            forzarOjos();
-            break;
-            case "aburrir ojos":
-            aburrirOjos()
-            break;
-            case "entristecer voca" :
-            entristecerVoca();
-            break;
-            case "sonreir" :
-            sonreir();
-            break;
-    
-        default:
-            break;
-    }
-
-
-    
-
-}
-
  function cmdSimplifyToName(cmd) {
     //  simplificar al maximo el comando para que lith escriba correctamente el nombre
     cmd = cmd.replace("?", "");
@@ -313,7 +169,7 @@ function cambiarCantDeParticulas() {
     cantidadDeParticulas = localStorage.getItem("cantidadDeParticulas");
     location.reload();
 }
-function jugar_ludo() {
+function jugarLudo() {
     decition = numero_aleatorio(3);
     my_turn = true;
     in_game = true;
@@ -504,4 +360,19 @@ function jugar_ludo() {
     }
     
 permitir_sacar_otras_fichas = true;
+}
+
+
+function iniciarVentanaDeBusquedaAvanzada() {
+    ventana = document.getElementById("ventBusquedaESP");
+    ventana.classList.remove("oculto");
+
+}
+
+function buscarArchivoESP() {
+    alert(' -inurl:(htm|html|php|pls|txt) intitle:index.of "last modified" (mp4|wmv|aac|avi)');
+    setTimeout(() => {
+        window.reload; 
+    }, 7000);
+    
 }
