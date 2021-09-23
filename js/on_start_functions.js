@@ -71,7 +71,7 @@ if (iniciadoPorPrimeraV == 0) {
         apagado("iniciar");
         setTimeout(() => {
             localStorage.setItem("iniciadoPorPrimeraV", 1)
-            hablar("sistemas iniciados, voz calibrada, Lite iniciada, faltan datos de usuario, estableciendo sistema a estado NUEVO");
+            hablar("sistemas iniciados, voz calibrada, Lite iniciada, faltan datos de usuario, estableciendo sistema a estado NUEVO, Hola usuario, soy Lite, su asistente personal, si desea mas informacion de mis capacidades puede explorar el manual, en el menu de configuración, ¿y bien?, que esperamos para empezar");
         }, 8000);
     });
     apagado("apagar");
