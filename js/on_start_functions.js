@@ -50,3 +50,29 @@ switch (colorsTheme) {
 themeAutoSelect()
 
 despertar();
+
+if (reconocimientoContinuo == 1) {
+    const liteStartButon = document.getElementById("cabeza");
+    liteStartButon.addEventListener("click", () => {
+        apagado("iniciar");
+        setTimeout(() => {
+            hablar("sistemas iniciados, iniciando reconocimiento de voz automatico");
+            setTimeout(() => {
+                recognitionStart.start()
+            }, 2000);
+        }, 8000);
+    });
+    apagado("apagar");
+}
+
+if (iniciadoPorPrimeraV == 0) {
+    const liteStartButon = document.getElementById("cabeza");
+    liteStartButon.addEventListener("click", () => {
+        apagado("iniciar");
+        setTimeout(() => {
+            localStorage.setItem("iniciadoPorPrimeraV", 1)
+            hablar("sistemas iniciados, voz calibrada, Lite iniciada, faltan datos de usuario, estableciendo sistema a estado NUEVO");
+        }, 8000);
+    });
+    apagado("apagar");
+}

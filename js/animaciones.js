@@ -238,3 +238,36 @@ function animacionHablar(veces_a_repetir) {
          v++
      }, 320);
 }
+
+
+function apagado(iniciarOApagar) {
+    // iniciar efectos visuales de lite
+     
+     let ojos = document.getElementById("ojos");
+     let voca = document.getElementById("voca");
+     let orejaA = document.getElementById("orejaA");
+     let orejaB = document.getElementById("orejaB");
+     let offSVG = document.getElementById("offSVG");
+     
+    
+        if (iniciarOApagar == "apagar") {
+            ojos.classList.add("oculto")
+            voca.classList.add("oculto")
+            orejaA.classList.add("ocultarOrejas")
+            orejaB.classList.add("ocultarOrejas")
+            setTimeout(function () {
+              offSVG.classList.remove("oculto");
+            },400)
+    
+        }
+        else if (iniciarOApagar == "iniciar") {
+            offSVG.classList.add("oculto");
+            setTimeout(function () {
+                ojos.classList.remove("oculto")
+                voca.classList.remove("oculto")
+                orejaB.classList.remove("ocultarOrejas")
+                orejaA.classList.remove("ocultarOrejas")
+                animacionDespertar();
+            },400) 
+        }
+}

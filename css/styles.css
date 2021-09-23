@@ -29,6 +29,15 @@ body{
     border-radius: 3vw;
     transition: opacity 2s;
 }
+.offSVG{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    border-radius: 3vw;
+    transition: opacity 2s;
+}
 .configSVG{
     position: absolute;
     width: 70%;
@@ -80,6 +89,12 @@ body{
 }
 
 .optionsMenu{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font: 1.2vw;
+    color: white;
     border-radius: 1vw;
     transition: right 1s;
     position: fixed;
@@ -87,9 +102,40 @@ body{
     top: 2%;
     background-color: rgba(255, 255, 255, 0.336);
     box-shadow: 0 0 4vw rgba(255, 255, 255, 0.336);
-    width: 20vw;
-    height: 40vw;
+    width: 20%;
+    height: 70%;
 }
+.optionsConfig{
+    width: 10vw;
+}
+.configButtons{
+    width: 3vw;
+}
+.ventana{
+    transition: right 2s;
+    width: 25vw; 
+    height: 10vw; 
+    position: fixed; 
+    top: 10%; 
+    background-color: rgba(255, 255, 255, 0.322); 
+    border-radius: 2vw;
+}
+.configText{
+    position: absolute;
+    width: 90%;
+    height: 1vw;
+}
+.RNCbottons{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 70%;
+    width: 22%;
+    height: 25%;
+}
+
 
 /* Toda la cara de gato que me lleva lite  */
 
@@ -174,9 +220,9 @@ animation: epicshadow 20s linear infinite;
     width: 7vw;
     background-color: rgb(134, 134, 134);
     border-radius: 10vw;
-    box-shadow: 0px 0px 10px white;
-    inset: 0px 0px 10px white;
-/* animation: epicshadow 20s linear infinite; */
+    box-shadow: 0px 0px 5px white;
+    inset: 0px 0px 5px white;
+animation: epicshadow 20s linear infinite;
 
     
 }
@@ -189,9 +235,9 @@ animation: epicshadow 20s linear infinite;
     width: 7vw;
     background-color: rgb(134, 134, 134);
     border-radius: 10vw;
-    box-shadow: 0px 0px 10px white;
-    inset: 0px 0px 10px white;
-/* animation: epicshadow 20s linear infinite; */
+    box-shadow: 0px 0px 5px white;
+    inset: 0px 0px 5px white;
+animation: epicshadow 20s linear infinite;
     
 }
 /* animaciones y clases para activarlas */
@@ -745,32 +791,31 @@ animation: aburrirOjos 3s ease;
 
 /* adaptacion de pantallas  */
 @media screen and (max-width:800px){
-    .cutte_kitten{
-        width: 40vw;
-        height: 40vw;
-        border-radius: 40vw;
-    }
-    .orejita1{
-        top:29%;
-        left: 33%;
-        height: 20vw;
-        width: 12vw;
-    }
-    .orejita2{
-        top:29%;
-        right: 33%;
-        height: 20vw;
-        width: 12vw;
-    }
     .liteHead{
     top: 40%;
     transform: scale(3);
     }
 
+.RNCbottons{
+    font-size: 20%;
+}
+
 .botonConfig{
     width: 10vw;
     height: 10vw;
 }
-
+.configButtons{
+    width: 70%;
+}
+.optionsConfig{
+    width: 20vw;
+}
+.optionsMenu{
+    font-size: 5vw;
+    width: 60%;
+}
+.ventana{
+transform: scale(2.5);
+}
 
 }

@@ -11,5 +11,14 @@ if (cantidadDeParticulas == null) {
     cantidadDeParticulas = localStorage.getItem("cantidadDeParticulas");
 }
 
+var reconocimientoContinuo = localStorage.getItem("reconocimientoContinuo");
+
+let iniciadoPorPrimeraV = localStorage.getItem("iniciadoPorPrimeraV");
+if (iniciadoPorPrimeraV == null) {
+    localStorage.setItem("iniciadoPorPrimeraV", 1);
+    iniciadoPorPrimeraV = localStorage.getItem("iniciadoPorPrimeraV");
+}
+
+
 
 

@@ -162,7 +162,6 @@ function sacarOptionsMenu() {
         optionsMenu.classList.add("ocultarVentana")
     }
 }
-
 function cambiarCantDeParticulas() {
     let partic = document.getElementById("seleccionarParticulas").value;
     localStorage.setItem("cantidadDeParticulas", partic)
@@ -361,18 +360,47 @@ function jugarLudo() {
     
 permitir_sacar_otras_fichas = true;
 }
-
-
 function iniciarVentanaDeBusquedaAvanzada() {
     ventana = document.getElementById("ventBusquedaESP");
     ventana.classList.remove("oculto");
 
 }
-
 function buscarArchivoESP() {
     alert(' -inurl:(htm|html|php|pls|txt) intitle:index.of "last modified" (mp4|wmv|aac|avi)');
     setTimeout(() => {
         window.reload; 
     }, 7000);
     
+}
+
+function cerrarAbrirVentanaDeRCN() {
+    let ventana = document.getElementById("ventanaDeRNC");
+
+    if (ventana.classList.contains("ocultarVentana")) {
+        ventana.classList.remove("ocultarVentana");
+    }
+    else{
+        ventana.classList.add("ocultarVentana")
+    }
+}
+
+function RNC(comando) {
+    switch (comando) {
+        case "activar":
+            localStorage.setItem("reconocimientoContinuo", 1);
+            reconocimientoContinuo = localStorage.getItem("reconocimientoContinuo");
+            location.reload();
+            break;
+            case "desactivar":
+            localStorage.setItem("reconocimientoContinuo", 0);
+            reconocimientoContinuo = localStorage.getItem("reconocimientoContinuo");
+            location.reload();
+            break;
+            case "cerrarAbrirVentana":
+            cerrarAbrirVentanaDeRCN();
+            sacarOptionsMenu()
+            break;
+        default:
+            break;
+    }
 }
