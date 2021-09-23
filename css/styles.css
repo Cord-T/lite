@@ -94,13 +94,13 @@ body{
     display: flex;
     flex-direction: column;
     font: 1.2vw;
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 1vw;
     transition: right 1s;
     position: fixed;
     right: 2%;
     top: 2%;
-    background-color: rgba(255, 255, 255, 0.336);
+    background-color: rgba(255, 255, 255, 0.671);
     box-shadow: 0 0 4vw rgba(255, 255, 255, 0.336);
     width: 20%;
     height: 70%;
@@ -117,7 +117,7 @@ body{
     height: 10vw; 
     position: fixed; 
     top: 10%; 
-    background-color: rgba(255, 255, 255, 0.322); 
+    background-color: rgba(255, 255, 255, 0.664); 
     border-radius: 2vw;
 }
 .configText{

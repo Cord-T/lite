@@ -15,8 +15,9 @@ var reconocimientoContinuo = localStorage.getItem("reconocimientoContinuo");
 
 let iniciadoPorPrimeraV = localStorage.getItem("iniciadoPorPrimeraV");
 if (iniciadoPorPrimeraV == null) {
-    localStorage.setItem("iniciadoPorPrimeraV", 1);
+    localStorage.setItem("iniciadoPorPrimeraV", 0);
     iniciadoPorPrimeraV = localStorage.getItem("iniciadoPorPrimeraV");
+    location.reload();
 }
 
 
