@@ -68,12 +68,15 @@ recognitionStart.onresult = (event) => {
     }
 }
 recognitionStart.onend = function () {
-    if (seEjecutoComando == false) {
-        setTimeout(() => {
-            recognitionStart.start();
-        }, 500);
-    }
-    }
+    setTimeout(() => {
+        if (seEjecutoComando == false) {
+            setTimeout(() => {
+                recognitionStart.start();
+            }, 500);
+        } 
+    }, 2000);
+  
+}
 
 // reconocimiento de comando 
 recognition.onresult = (event) => {
