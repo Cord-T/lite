@@ -14,9 +14,12 @@ var chistes = [
     "Hola. soy paraguayo y quiero pedirle la mano de su hija para casarme con ella.. ¿Para qué?. Paraguayo."
 ];
 const fecha = new Date();
-var hoy = fecha.getDate();
-var horactual = fecha.getHours();
-var minutos = fecha.getMinutes();
+var today = fecha.getDate();
+var hour = fecha.getHours();
+var minutes = fecha.getMinutes();
+let hoy = JSON.stringify(today);
+let hora = JSON.stringify(hour);
+let minutos = JSON.stringify(minutes);
 var in_game = false;
 var my_turn = false;
 var fi1 = "base";

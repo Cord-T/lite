@@ -7,7 +7,7 @@ recognition.interResults = false;
 
 // establecer un evento al iniciar 
 recognition.addEventListener("start", () => {
-start_lite()
+start_lite("iniciar")
 });
 
 // establecer que al precionar espacio se inicie el reconocimiento
@@ -49,5 +49,5 @@ recognition.onresult = (event) => {
 }
 // establecer un evento al terminar el reconocimiento 
 recognition.onend = function () {
-start_lite()
+start_lite("apagar")
 }

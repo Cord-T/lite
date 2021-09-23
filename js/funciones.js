@@ -1,43 +1,65 @@
-function start_lite() {
+function start_lite(iniciarOApagar) {
 // iniciar efectos visuales de lite
  
  let ojos = document.getElementById("ojos");
  let voca = document.getElementById("voca");
  let orejaA = document.getElementById("orejaA");
  let orejaB = document.getElementById("orejaB");
- let loadingScreen = document.getElementById("loadingScreen")
+ let microfono = document.getElementById("microfonoSVG");
  
 
-    if (ojos.classList.contains("oculto") && voca.classList.contains("oculto")) {
-        loadingScreen.classList.add("oculto")
-        setTimeout(function () {
-            ojos.classList.remove("oculto")
-            voca.classList.remove("oculto")
-            orejaB.classList.remove("ocultarOrejas")
-            orejaA.classList.remove("ocultarOrejas")
-        },400)
-
-    }
-    else{
+    if (iniciarOApagar == "iniciar") {
         ojos.classList.add("oculto")
         voca.classList.add("oculto")
         orejaA.classList.add("ocultarOrejas")
         orejaB.classList.add("ocultarOrejas")
         setTimeout(function () {
-            loadingScreen.classList.remove("oculto") 
+          microfono.classList.remove("oculto");
         },400)
+
     }
+    else if (iniciarOApagar == "apagar") {
+        microfono.classList.add("oculto");
+        setTimeout(function () {
+            ojos.classList.remove("oculto")
+            voca.classList.remove("oculto")
+            orejaB.classList.remove("ocultarOrejas")
+            orejaA.classList.remove("ocultarOrejas")
+        },400) 
+    }
+
+ 
+    
  }
 
-function guiñar() {
+
+function animacionDespertar() {
+    let voca = document.getElementById("voca");
     let ojo1 = document.getElementById("ojo1");
-   
+    let ojo2 = document.getElementById("ojo2");
+    let orejaA = document.getElementById("orejaA");
+    let orejaB = document.getElementById("orejaB");
+
+    voca.classList.add("despertarVoca");
+    ojo1.classList.add("despertarOjos");
+    ojo2.classList.add("despertarOjos");
+    orejaA.classList.add("despertarOreja1");
+    orejaB.classList.add("despertarOreja2");
+    setTimeout(function () {
+        voca.classList.remove("despertarVoca");
+        ojo1.classList.remove("despertarOjos");
+        ojo2.classList.remove("despertarOjos");
+        orejaA.classList.remove("despertarOreja1");
+        orejaB.classList.remove("despertarOreja2"); 
+    },15000)
+}
+
+function wink() {
+    let ojo1 = document.getElementById("ojo1");
     ojo1.classList.add("parpadear");
     setTimeout(        function () {
         ojo1.classList.remove("parpadear")  
-    },500)
-
-    
+    },500)   
 }
 
 function animacionHablar(veces_a_repetir) {
@@ -60,6 +82,15 @@ function animacionHablar(veces_a_repetir) {
      }, 320);
 }
 
+function despertar() {
+    let ultimaDespertada = localStorage.getItem("ultimaDespertada");
+    console.log(ultimaDespertada)
+    if (ultimaDespertada !== hoy) {
+        localStorage.setItem("ultimaDespertada", hoy);
+        animacionDespertar();
+    }else{}
+}
+
 function pestañear() {
     let ojo1 = document.getElementById("ojo1");
     let ojo2 = document.getElementById("ojo2");
@@ -71,6 +102,77 @@ function pestañear() {
     setTimeout(        function () {
         ojo2.classList.remove("parpadear")  
     },500)
+}
+
+function forzarOjos() {
+    let ojo1 = document.getElementById("ojo1");
+    let ojo2 = document.getElementById("ojo2");
+    ojo1.classList.add("forzarOjos");
+    setTimeout(        function () {
+        ojo1.classList.remove("forzarOjos")  
+    },5000)
+    ojo2.classList.add("forzarOjos");
+    setTimeout(        function () {
+        ojo2.classList.remove("forzarOjos")  
+    },5000)
+}
+function aburrirOjos(params) {
+    let ojo1 = document.getElementById("ojo1");
+    let ojo2 = document.getElementById("ojo2");
+    ojo1.classList.add("aburrirOjos");
+    setTimeout(        function () {
+        ojo1.classList.remove("aburrirOjos")  
+    },5000)
+    ojo2.classList.add("aburrirOjos");
+    setTimeout(        function () {
+        ojo2.classList.remove("aburrirOjos")  
+    },5000)
+}
+
+function entristecerVoca() {
+    let voca = document.getElementById("voca");
+    voca.classList.add("entristecerVoca");
+    setTimeout(        function () {
+        voca.classList.remove("entristecerVoca")  
+    },5000)
+}
+function sonreir(){
+    let voca = document.getElementById("voca");
+    voca.classList.add("sonreir");
+    setTimeout(        function () {
+        voca.classList.remove("sonreir")  
+    },5000)
+}
+
+function animaciones(animacion){
+
+    switch (animacion) {
+            case "wink" :
+            wink()
+            break;
+            case "pestañear" :
+            pestañear()
+            break;
+            case "forzar ojos" :
+            forzarOjos();
+            break;
+            case "aburrir ojos":
+            aburrirOjos()
+            break;
+            case "entristecer voca" :
+            entristecerVoca();
+            break;
+            case "sonreir" :
+            sonreir();
+            break;
+    
+        default:
+            break;
+    }
+
+
+    
+
 }
 
  function cmdSimplifyToName(cmd) {
@@ -188,13 +290,20 @@ function lanzar_dado() {
     return dado;
 }
 
+function cambiarOpciones() {
+    cambiarCantDeParticulas();
+    let setcolors = document.getElementById("seleccionarColor").value;
+    localStorage.setItem("colorsTheme", setcolors);
+    colorsTheme = localStorage.getItem("colorsTheme") 
+}
+
 function sacarOptionsMenu() {
     let optionsMenu = document.getElementById("optionsMenu");
-    if (optionsMenu.classList.contains("oculto")) {
-        optionsMenu.classList.remove("oculto");
+    if (optionsMenu.classList.contains("ocultarVentana")) {
+        optionsMenu.classList.remove("ocultarVentana");
     }
     else{
-        optionsMenu.classList.add("oculto")
+        optionsMenu.classList.add("ocultarVentana")
     }
 }
 

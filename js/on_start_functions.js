@@ -8,3 +8,28 @@ setInterval(() => {
     }else{
     }
  }, 4000);
+
+function themeAutoSelect() {
+let cabeza = document.getElementById("cabeza");  
+let orejaA = document.getElementById("orejaA");
+let orejaB = document.getElementById("orejaB");
+switch (colorsTheme) {
+    case "default":
+        cabeza.classList.remove("multiColorShadow");
+        orejaA.classList.remove("multiColorShadow");
+        orejaB.classList.remove("multiColorShadow");
+        break;
+        case "multiColor":
+            cabeza.classList.add("multiColorShadow");
+            orejaA.classList.add("multiColorShadow");
+            orejaB.classList.add("multiColorShadow");
+            break;
+
+
+    default:
+        break;
+}
+}
+themeAutoSelect()
+
+despertar();

@@ -11,9 +11,8 @@
 <body>   
 
     <div onclick="recognition.start()" id="particles-js"></div>
-    <!-- cabeza de lite -->
-    <div class="botonConfig" onclick="sacarOptionsMenu()"></div>
-    <div class="optionsMenu oculto" id="optionsMenu">
+    <div class="botonConfig" onclick="sacarOptionsMenu()"> <img class="configSVG" src="img/config.svg" alt=""></div>
+    <div class="optionsMenu ocultarVentana" id="optionsMenu">
         <p>Particulas:</p>
         <select id="seleccionarParticulas">
             <!-- selecciona la cantidad de particulas  -->
@@ -22,16 +21,24 @@
             <option value="40" label="Medas(Cuidado)"> </option>
             <option value="110" label="Altas(Mas consumo)"> </option>
         </select>
+        <p>Colores/Temas:</p>
+        <select id="seleccionarColor">
+            <!-- selecciona el color  -->
+            <option value="default" label="Por Defecto"> </option>
+            <option value="multiColor" label="multiColor"> </option>
+        </select>
 
-        <button onclick="cambiarCantDeParticulas()">Aplicar</button>
+        <button onclick="cambiarOpciones()">Aplicar</button>
         <button onclick="sacarOptionsMenu()">Cerrar</button>
         <button onclick="sacarOptionsMenu()">Aceptar</button>
     </div>
-  
+   <!-- cabeza de lite -->
     <div class="liteHead " id="LiteHead">
         <div class="orejaA" id="orejaA"></div>
         <div class="orejaB" id="orejaB"></div>
-        <div class="cabeza"></div>
+        <div class="cabeza" id="cabeza">
+            <img id="microfonoSVG" class="microfono oculto" src="img/micro.svg" alt="">
+        </div>
         <div class="ojos" id="ojos">
             <div class="ojo ojo1" onclick="pestañear()" id="ojo1"></div>
             <div class="ojo ojo2"  onclick="pestañear()" id="ojo2"></div>
@@ -40,28 +47,7 @@
 
     
     </div>
-    <div class="loading oculto" id="loadingScreen">
-        <div class="blocks" style="--i:1;"></div>
-        <div class="blocks" style="--i:2;"></div>
-        <div class="blocks" style="--i:3;"></div>
-        <div class="blocks" style="--i:4;"></div>
-        <div class="blocks" style="--i:5;"></div>
-        <div class="blocks" style="--i:6;"></div>
-        <div class="blocks" style="--i:7;"></div>
-        <div class="blocks" style="--i:8;"></div>
-        <div class="blocks" style="--i:9;"></div>
-        <div class="blocks" style="--i:10;"></div>
-        <div class="blocks" style="--i:11;"></div>
-        <div class="blocks" style="--i:12;"></div>
-        <div class="blocks" style="--i:13;"></div>
-        <div class="blocks" style="--i:14;"></div>
-        <div class="blocks" style="--i:15;"></div>
-        <div class="blocks" style="--i:16;"></div>
-        <div class="blocks" style="--i:17;"></div>
-        <div class="blocks" style="--i:18;"></div>
-        <div class="blocks" style="--i:19;"></div>
-        <div class="blocks" style="--i:20;"></div>
-    </div>
+   
 
     
     
@@ -73,12 +59,12 @@
 <script src="js/datos.js"></script>
 <!-- variables usadas frecuentemente -->
 <script src="js/variables.js"></script>
+<!-- funciones y herramientas de lith -->
+<script src="js/funciones.js"></script>
 <!-- funciones que se ejecutan al cargar la pagina -->
 <script src="js/on_start_functions.js"></script>
 <!-- reconocimiento de voz y traduccion de esta  -->
 <script src="js/voice_reconociment.js"></script>
-<!-- funciones y herramientas de lith -->
-<script src="js/funciones.js"></script>
 <!-- reconocimiento de comandos y activacion de estos -->
 <script src="js/comandos.js"></script>
 <!-- sistema de voz de lith  -->

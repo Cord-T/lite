@@ -15,21 +15,60 @@ body{
     height: 100%;
     background: linear-gradient(150deg, #c5c5c5, #000000, #777777);
     background-size: 400% 300%;
+   
     animation: wallpaper 20s ease infinite;
     
 }
-/* ventanas  */
+/* iconos y animaciones de iconos */
+.microfono{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    border-radius: 3vw;
+    transition: opacity 2s;
+}
+.configSVG{
+    position: absolute;
+    width: 70%;
+    height: 70%;
+}
 .botonConfig{
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
     right: 0%;
     border-radius: 4vw;
     top: 0%;
     background-color: rgb(105, 105, 105);
-    position: absolute;
     width: 3vw;
     height: 3vw;
     cursor: pointer;
 }
+
+.botonConfig:hover{
+    animation: GirarLol 1s ease infinite;
+ 
+}
+
+@keyframes GirarLol {
+        0%
+        {
+            transform: rotate(0deg);
+        }
+        100%
+        {
+            transform: rotate(360deg);
+        }
+}
+/* ventanas  */
+
 .optionsMenu{
+    border-radius: 1vw;
+    transition: right 1s;
     position: fixed;
     right: 2%;
     top: 2%;
@@ -69,10 +108,11 @@ body{
     
     position: absolute;
     border-radius: 6vw;
-    border-left: 2.275vw solid transparent;
-    border-right: 2.275vw solid transparent;
-    border-top: 6vw solid transparent;
-    border-color: rgb(255, 255, 255);
+    width: 4.7vw;
+    border-bottom: 3vw solid white;
+    border-top: 3vw solid white;
+    border-color: white;
+    background-color: white;
     
     
 }
@@ -93,8 +133,7 @@ body{
     flex-direction: row;
     border-top: 6vw solid transparent;
     border-bottom: 2vw solid white;
-    border-right: 5vw solid transparent;
-    width: 0vw;
+    width: 5vw;
     height: 0vw;
     position: absolute;
     top: 25%; 
@@ -115,21 +154,6 @@ animation: epicshadow 20s linear infinite;
 }
 .orejaA{
     transition: transform 1s;
-    right: 5%;
-    top:-15%;
-    position: absolute;
-    height: 15vw;
-    width: 7vw;
-    background-color: rgb(134, 134, 134);
-    border-radius: 10vw;
-    box-shadow: 0px 0px 50px white;
-    inset: 0px 0px 50px white;
-animation: epicshadow 20s linear infinite;
-
-    
-}
-.orejaB{
-    transition: transform 1s;
     left: 5%;
     top:-15%;
     position: absolute;
@@ -137,9 +161,24 @@ animation: epicshadow 20s linear infinite;
     width: 7vw;
     background-color: rgb(134, 134, 134);
     border-radius: 10vw;
-    box-shadow: 0px 0px 50px white;
-    inset: 0px 0px 50px white;
-animation: epicshadow 20s linear infinite;
+    box-shadow: 0px 0px 10px white;
+    inset: 0px 0px 10px white;
+/* animation: epicshadow 20s linear infinite; */
+
+    
+}
+.orejaB{
+    transition: transform 1s;
+    right: 5%;
+    top:-15%;
+    position: absolute;
+    height: 15vw;
+    width: 7vw;
+    background-color: rgb(134, 134, 134);
+    border-radius: 10vw;
+    box-shadow: 0px 0px 10px white;
+    inset: 0px 0px 10px white;
+/* animation: epicshadow 20s linear infinite; */
     
 }
 /* animaciones y clases para activarlas */
@@ -166,15 +205,18 @@ animation: epicshadow 20s linear infinite;
 @keyframes parpadear {
     0%{
         top: 0%;
-        border-top: 6vw solid white;
+        border-top: 3vw solid white;
+        border-bottom: 3vw solid white;
     }
     50%{
         top: 50%;
         border-top: 0.1vw solid white;
+        border-bottom: 0.1vw solid white;
     }
     100%{
         top: 0%;
-        border-top: 6vw solid white;
+        border-top: 3vw solid white;
+        border-bottom: 3vw solid white;
     }
 }
 
@@ -211,6 +253,44 @@ animation: epicshadow 20s linear infinite;
                     filter: hue-rotate(360deg);
                 }
             }
+            .multiColorShadow{
+                animation: multiColorShadow 20s ease infinite;
+                background-color: rgb(30, 255, 0);
+            }
+            @keyframes multiColorShadow {
+                0% {
+                    box-shadow: 0 0 0.5vw rgb(9, 255, 0),
+                                inset 0 0 0.5vw rgb(21, 255, 0);
+                                filter: hue-rotate(0deg);
+            
+                            }
+                20% {
+                    box-shadow: 0 0 0.7vw rgb(9, 255, 0),
+                                inset 0 0 0.7vw rgb(0, 255, 13);
+            
+                            }
+                            40% {
+                    box-shadow: 0 0 0.4vw rgb(21, 255, 0),
+                    inset 0 0 0.4vw rgb(30, 255, 0);
+            
+                }
+                60% {
+                    box-shadow: 0 0 1vw rgb(21, 255, 0),
+                                inset 0 0 1vw rgb(51, 255, 0);
+            
+                }
+                80% {
+                    box-shadow: 0 0 2vw rgb(0, 255, 13),
+                                inset 0 0 1.5vw rgb(9, 255, 0);
+            
+                }
+                100% {
+                    box-shadow: 0 0 0.5vw rgb(0, 255, 21),
+                                inset 0 0 0.5vw rgb(0, 255, 13);
+                                filter: hue-rotate(360deg);
+                            }
+                        }
+
 
 @keyframes fullscreen {
     0% {width: 0% 50%;}
@@ -225,15 +305,6 @@ animation: epicshadow 20s linear infinite;
 }
 /* pantalla de carga multi uso  */
 
-.loading{
-    position: fixed;
-    width: 30vw;
-    height: 26.5vw;
-    animation: animatedBackgroundColorsPro 10s linear infinite;
-    transform: scale(0.6);
-    transition: opacity 1s;
-}
-
 
 @keyframes animatedBackgroundColorsPro {
     0%{
@@ -247,42 +318,14 @@ animation: epicshadow 20s linear infinite;
     
 }
 
-.loading .blocks{
-    position: absolute;
-    width: 1vw;
-    height: 3vw;
-    border-radius: 4vw;
-    background-color: black;
-    left: 50%;
-    transform: rotate(calc(18deg * var(--i)));
-    transform-origin: 0 125px;
-    animation: loadingAnimation 1.9s ease-in-out infinite;
-    /* esto es para retardar la animacion por un segundo aca la ecuacion 1segundo / cantidad de bloques en este caso 20 = 0.05s */
-    animation-delay: calc(0.05s * var(--i));
-}
-@keyframes loadingAnimation {
-    0%
-    {
-    background-color: black;
-    box-shadow: none;
-    }
 
-    50.1%,100%
-    {
-        background-color: #0f0;
-        box-shadow: 0 0 5px #0f0;
-        box-shadow: 0 0 15px #0f0;
-        box-shadow: 0 0 30px #0f0;
-        box-shadow: 0 0 60px #0f0;
-        box-shadow: 0 0 90px #0f0;
-    }
-}
 
 /* formas de ocultar  */
 .oculto{
-    transform: scale(0);
+    transition: opacity 1s, transform 10s;
     opacity: 0%;
-    transition: opacity 1s;
+    transform: scale(0);
+    
 }
 .ocultoSeco{
     transform: scale(0);
@@ -291,12 +334,317 @@ animation: epicshadow 20s linear infinite;
 }
 .ocultarOrejas{
     transition: transform 1s;
-    transform: scale(0.1)
+    transform: scale(0)
     
 }
+.ocultarVentana{
+    transition: right 2s;
+    right:-100%;
+}
+/* animaciones faciales y mas detalles  */
+
+
+
+
+
+.bajarOrejas{
+    transition: top 2s;
+    top: 40%;
+}
+
+.despertarOjos{
+    animation: despertarOjos 4s ease;
+}
+
+@keyframes despertarOjos {
+    0%
+    {
+        top: 50%;
+        border-top: 0.1vw solid white;
+        border-bottom: 0.1vw solid white;
+    }
+    50%
+    {
+     top: 25%;
+     border-top: 1.5vw solid white;
+     border-bottom: 1.5vw solid white;
+    }
+    55%
+    {
+     top: 50%;
+     border-top: 0.1vw solid white;
+     border-bottom: 0.1vw solid white;
+    }
+    75%{
+        top: 25%;
+        border-top: 1.5vw solid white;
+        border-bottom: 1.5vw solid white;
+    }
+
+    80%
+        {
+            top: 50%;
+            border-top: 0.1vw solid white;
+            border-bottom: 0.1vw solid white;
+        }
+
+    100%{
+        top: 0%;
+        border-top: 3vw solid white;
+        border-bottom: 3vw solid white;
+    }
+
+}
+
+.despertarVoca{
+    animation: despertarVoca 7s ease; 
+}
+@keyframes despertarVoca {
+    0%
+    {
+        top: 27%;
+        border-bottom: 0vw solid white;
+    }
+    75%
+    {
+        top: 27%;
+        border-bottom: 0vw solid white;
+    }
+    100%
+    {
+        top: 25%;
+        border-bottom: 2vw solid white;
+    }
+
+}
+
+.despertarOreja1{
+    animation: despertarOrejas 9s ease;  
+}
+.despertarOreja2{
+    animation: despertarOrejas 9.5s ease;  
+}
+@keyframes despertarOrejas {
+    0%
+    {
+        top:50%;
+    height: 0vw;
+    }
+    90%
+    {
+        top:50%;
+        height: 0vw;
+    }
+    100%
+    {
+        top:-15%;
+        height: 15vw;
+    }
+
+}
+
+
+.forzarOjos{
+    animation: forzarOjos 5s ease;
+}
+@keyframes forzarOjos {
+    0%{
+        border-bottom: 3vw solid white;
+    }
+    10%{
+        border-bottom: 2vw solid white;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    90%{
+        border-bottom: 2vw solid white;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    100%{
+        border-bottom: 3vw solid white;
+    }
+}
+
+.aburrirOjos{
+animation: aburrirOjos 5s ease;
+}
+
+@keyframes aburrirOjos {
+    0%{
+        top: 0%;
+        border-top: 3vw solid white; 
+    }
+    10%{
+        top: 16%;
+        border-top: 2vw solid white;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    90%{
+        top: 16%;
+        border-top: 2vw solid white;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    100%{
+        top: 0%;
+        border-top: 3vw solid white; 
+    }
+}
+
+
+.entristecerVoca{
+   animation: entristecerVoca 5s ease;
+}
+@keyframes entristecerVoca {
+    0%{
+        top: 25%;
+    border-top: 6vw solid transparent;
+    border-bottom: 2vw solid white;
+    }
+    10%{
+        top: 26%;
+        border-top: 6vw solid transparent;
+        border-bottom: 1vw solid white;
+    }
+    90%{
+        top: 26%;
+        border-top: 6vw solid transparent;
+        border-bottom: 1vw solid white;
+    }
+    100%{
+        top: 25%;
+        border-top: 6vw solid transparent;
+        border-bottom: 2vw solid white;
+    }
+}
+
+.sonreir{
+    animation: sonreir 5s ease;
+}
+@keyframes sonreir {
+    0%{
+        top: 25%;
+        width: 5vw;
+    border-top: 6vw solid transparent;
+    border-bottom: 2vw solid white;
+    }
+    10%{
+        top: 34%;
+        width: 6vw;
+        border-top: 4vw solid transparent;
+        border-bottom: 3vw solid white;
+    }
+    90%{
+        top: 34%;
+        width: 6vw;
+        border-top: 4vw solid transparent;
+        border-bottom: 3vw solid white;
+    }
+    100%{
+        top: 25%;
+        width: 5vw;
+        border-top: 6vw solid transparent;
+        border-bottom: 2vw solid white;
+    }
+}
+
+.agitarOrejaA{
+    animation: agitarOrejaA 2s ease;
+}
+@keyframes agitarOrejaA {
+    0%{
+        left: 5%;
+        transform: rotate(0deg);
+    }
+    10%{
+        left: 2%;
+        transform: rotate(-20deg);
+    }
+    20%{
+        left: 5%;
+        transform: rotate(0deg); 
+    }
+    30%{
+        left: 2%;
+        transform: rotate(-20deg);
+    }
+    40%{
+        left: 5%;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 2%;
+        transform: rotate(-20deg);
+    }
+    80%{
+        left: 5%;
+        transform: rotate(0deg); 
+    }
+    90%{
+        left: 2%;
+        transform: rotate(-20deg);
+    }
+    90%{
+        left: 5%;
+        transform: rotate(0deg);
+    }
+}
+.agitarOrejaB{
+    animation: agitarOrejaB 2s ease;
+}
+@keyframes agitarOrejaB {
+    0%{
+        right: 5%;
+        transform: rotate(0deg);
+    }
+    10%{
+        right: 2%;
+        transform: rotate(20deg);
+    }
+    20%{
+        right: 5%;
+        transform: rotate(0deg); 
+    }
+    30%{
+        right: 2%;
+        transform: rotate(20deg);
+    }
+    40%{
+        right: 5%;
+        transform: rotate(0deg);
+    }
+    50%{
+        right: 2%;
+        transform: rotate(20deg);
+    }
+    80%{
+        right: 5%;
+        transform: rotate(0deg); 
+    }
+    90%{
+        right: 2%;
+        transform: rotate(20deg);
+    }
+    90%{
+        right: 5%;
+        transform: rotate(0deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* adaptacion de pantallas  */
-@media screen and (max-width:1081px){
+@media screen and (max-width:800px){
     .cutte_kitten{
         width: 40vw;
         height: 40vw;
@@ -319,18 +667,10 @@ animation: epicshadow 20s linear infinite;
     transform: scale(3);
     }
 
-.loading{
-    transform: scale(0.8);
-    top: 29%;
-}
 .botonConfig{
     width: 10vw;
     height: 10vw;
 }
-.loading .blocks{
-    width: 4vw;
-    height: 6vw;
-    
-}
+
 
 }
