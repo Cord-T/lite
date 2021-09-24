@@ -54,7 +54,7 @@ recognitionStart.onresult = (event) => {
     // ----
     console.log(cmd);
     if (cmd.indexOf('oye like') > -1 || cmd.indexOf('oye lit') > -1 || cmd.indexOf('oye like') > -1) {
-        respuesta = '¿diga señor?';
+        respuesta = atender[numero_aleatorio(10)];;
         hablar(respuesta);
        animaciones("sonreir")
        recognitionStart.stop();

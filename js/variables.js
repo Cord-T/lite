@@ -13,6 +13,14 @@ var chistes = [
     " Abuelo, ¿por qué estás delante del ordenador con los ojos cerrados?.. Es que Windows me ha dicho que cierre las pestañas.",
     "Hola. soy paraguayo y quiero pedirle la mano de su hija para casarme con ella.. ¿Para qué?. Paraguayo."
 ];
+var atender = [
+    "¿dime, "+username+"?", 
+    "¿si señor?",
+    "¿en que le soy util?.",
+    "¿dime?",
+    "¿que hago?",
+    "aqui estoy"
+];
 const fecha = new Date();
 var today = fecha.getDate();
 var hour = fecha.getHours();
