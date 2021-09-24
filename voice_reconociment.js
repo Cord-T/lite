@@ -53,8 +53,8 @@ recognitionStart.onresult = (event) => {
     cmd = cmd.replace("ù", "u");
     // ----
     console.log(cmd);
-    if (cmd.indexOf('oye like') > -1 || cmd.indexOf('oye lit') > -1 || cmd.indexOf('oye like') > -1) {
-        respuesta = '¿diga señor?';
+    if (cmd.indexOf('oye like') > -1 || cmd.indexOf('oye lit') > -1 || cmd.indexOf('oye like') > -1 || cmd.indexOf('hey') > -1|| cmd.indexOf('like') > -1 || cmd.indexOf('oye') > -1) {
+        respuesta = atender[numero_aleatorio(10)];;
         hablar(respuesta);
        animaciones("sonreir")
        recognitionStart.stop();
