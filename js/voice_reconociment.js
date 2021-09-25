@@ -4,7 +4,7 @@ let seEjecutoComando = false;
 let recognitionStart  = new webkitSpeechRecognition();
 recognitionStart.lang = 'es-ES';
 recognitionStart.continuous = true;
-recognitionStart.interResults = false;
+recognitionStart.interResults = true;
 
 
 let recognition = new webkitSpeechRecognition();
@@ -15,6 +15,7 @@ recognition.interResults = false;
 // establecer un evento al iniciar 
 recognition.addEventListener("start", () => {
     EyeError(1);
+    peticionCumplida = "no";
 start_lite("iniciar")
 });
 
@@ -108,7 +109,7 @@ recognition.onresult = (event) => {
 // establecer un evento al terminar el reconocimiento 
 recognition.onend = function () {
     EyeError(0);
-    peticionCumplida = "no";
+    
     // se pregunta si la opcion reconocimientoContinuo esta activa, si lo esta entonces al finalizar el reconocimiento de comandos inicia este automaticamente 
     if (reconocimientoContinuo == 1) {
         setTimeout(() => {

@@ -407,7 +407,7 @@ function RNC(comando) {
 
 function EyeError(enUso) {
     setTimeout(() => {
-        if (peticionCumplida == "no" || enUso == 1) {
+        if (peticionCumplida == "no" && enUso == 1) {
             hablar("Lo lamento, ocurrio un error y para proteger el dispositivo volvi a cargar mi sistema, intente volver a hacer la busqueda, y si sigue fallando puede comunicarse con el soporte")
             location.reload();
         }

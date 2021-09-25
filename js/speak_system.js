@@ -19,7 +19,6 @@
 
 
 function hablar(respuesta) {
-    respuesta.voice;
     speechSynthesis.speak( new SpeechSynthesisUtterance(respuesta));
     // let r_l = respuesta.length;
     // r_l = r_l / 4.5

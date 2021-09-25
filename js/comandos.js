@@ -313,6 +313,7 @@ else{
         window.open();
         wink();
         respuesta = "¡Ok"+username+"! inicíando el modo escritura.";
+        peticionCumplida = "si";
 
     }
     if (cmd.includes("nada gracias")) {
