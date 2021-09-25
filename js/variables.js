@@ -16,7 +16,7 @@ var chistes = [
 var atender = [
     "¿dime, "+username+"?", 
     "¿si señor?",
-    "¿en que le soy util?.",
+    "¿en que le soy utíl?",
     "¿dime?",
     "¿que hago?",
     "aqui estoy"

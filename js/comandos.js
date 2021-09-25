@@ -138,6 +138,14 @@ else{
         respuesta = "¡Ok"+username+"! buscando en google"+url;
         window.open('https://www.google.com/search?q='+url);   
     }
+    else if (cmd. indexOf('busca en internet') > -1 || cmd.indexOf('buscar en internet') > -1){
+        url = cmd;
+        wink();
+        url = url.replace("busca en google", "");
+        url = url.replace("buscar en google", "");
+        respuesta = "¡Ok"+username+"! buscando en google"+url;
+        window.open('https://www.google.com/search?q='+url);   
+    }
     else if (cmd. indexOf('busca en youtube') > -1 || cmd. indexOf('busca') > -1 && cmd. indexOf('youtube') > -1){
         url = cmd;
         wink();
@@ -307,7 +315,9 @@ else{
         respuesta = "¡Ok"+username+"! inicíando el modo escritura.";
 
     }
-
+    if (cmd.includes("nada gracias")) {
+        hablar("ok")
+    }
     
     
 // buscar lo que el usuario diga sin necesidad de google
@@ -316,7 +326,6 @@ else{
        respuesta = "Aparentemente no tengo respuesta a tu comando, así que lo buscare en google";
        window.open('https://www.google.com/search?q='+cmd);  
     }
-
- 
+    peticionCumplida = "si";
 }
 

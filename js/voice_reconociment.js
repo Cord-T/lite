@@ -14,6 +14,7 @@ recognition.interResults = false;
 
 // establecer un evento al iniciar 
 recognition.addEventListener("start", () => {
+    EyeError(1);
 start_lite("iniciar")
 });
 
@@ -53,7 +54,7 @@ recognitionStart.onresult = (event) => {
     cmd = cmd.replace("ù", "u");
     // ----
     console.log(cmd);
-    if (cmd.indexOf('oye like') > -1 || cmd.indexOf('oye lit') > -1 || cmd.indexOf('oye like') > -1) {
+    if (cmd.includes('oye like')|| cmd.includes('oye lit')|| cmd.includes('oye like')|| cmd.includes('hey')|| cmd.includes('like') > -1 || cmd.includes('oye')|| cmd.includes("ok") || cmd.includes("atiende")) {
         respuesta = atender[numero_aleatorio(10)];;
         hablar(respuesta);
        animaciones("sonreir")
@@ -106,6 +107,8 @@ recognition.onresult = (event) => {
 }
 // establecer un evento al terminar el reconocimiento 
 recognition.onend = function () {
+    EyeError(0);
+    peticionCumplida = "no";
     // se pregunta si la opcion reconocimientoContinuo esta activa, si lo esta entonces al finalizar el reconocimiento de comandos inicia este automaticamente 
     if (reconocimientoContinuo == 1) {
         setTimeout(() => {

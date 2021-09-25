@@ -20,6 +20,8 @@ if (iniciadoPorPrimeraV == null) {
     location.reload();
 }
 
+var peticionCumplida = "no";
+
 
 
 
