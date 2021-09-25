@@ -14,7 +14,7 @@ var chistes = [
     "Hola. soy paraguayo y quiero pedirle la mano de su hija para casarme con ella.. ¿Para qué?. Paraguayo."
 ];
 var atender = [
-    "¿dime, "+username+"?", 
+    "¿dime "+username+"?", 
     "¿si señor?",
     "¿en que le soy utíl?",
     "¿dime?",
