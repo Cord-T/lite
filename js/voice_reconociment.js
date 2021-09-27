@@ -3,7 +3,7 @@
 let seEjecutoComando = false;
 let recognitionStart  = new webkitSpeechRecognition();
 recognitionStart.lang = 'es-ES';
-recognitionStart.continuous = true;
+recognitionStart.continuous = false;
 recognitionStart.interResults = true;
 
 
@@ -56,8 +56,7 @@ recognitionStart.onresult = (event) => {
     // ----
     console.log(cmd);
     if (cmd.includes('oye like')|| cmd.includes('oye lit')|| cmd.includes('oye like')|| cmd.includes('hey')|| cmd.includes('like') > -1 || cmd.includes('oye')|| cmd.includes("ok") || cmd.includes("atiende")) {
-        respuesta = atender[numero_aleatorio(10)];;
-        hablar(respuesta);
+        hablar(atender[numero_aleatorio(5)]);
        animaciones("sonreir")
        recognitionStart.stop();
        setTimeout(() => {
