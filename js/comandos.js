@@ -1,5 +1,7 @@
 function comandos(cmd) {
-    // comandos interactivos
+                    // -------------------------------
+                     // comandos interactivos
+                    // -------------------------------
     if (cmd.indexOf('hola') === 0 && cmd.length < 15|| cmd.indexOf('que onda') > -1 && cmd.length < 30 || cmd.indexOf('que hay') > -1 && cmd.length < 20) {
         respuesta = 'Hola como estas';
        animaciones("sonreir")
@@ -54,8 +56,10 @@ function comandos(cmd) {
             respuesta = "Buenos dias"+username+", que tengas un dia productivo"
     
             }
+                    // -------------------------------
+                    //comandos de utilidades
+                    // -------------------------------
 
-    //comandos de utilidades
 
     else if (cmd.indexOf('busca informacion sobre un archivo de video llamado') > -1 ){
         cmd = cmd.replace("busca informacion sobre un archivo de video llamado", "");
@@ -113,7 +117,10 @@ else{
     else if (cmd.includes("que") && cmd.includes("hora") && cmd.length < 15 || cmd.includes("dime la") && cmd.includes("hora") && cmd.length < 15||cmd.includes("hora") && cmd.length < 15) {
         respuesta = "son las "+hour+" con "+minutes+" minutos"
     }
+                    // -------------------------------
                     //configuracion de usuario
+                    // -------------------------------
+
     if (cmd.includes("quita") && cmd.includes("tutorial") && cmd.length < 40|| cmd.includes("desactiva") && cmd.includes("tutorial") && cmd.length < 40 || cmd.includes("inactiva") && cmd.includes("tutorial") && cmd.length < 50) {
         localStorage.setItem("tutorial", "no");
         
@@ -129,7 +136,10 @@ else{
         window.open('https://www.facebook.com/Para.que.me.lees/');   
         respuesta = "de acuerdo, redirigiendo al contacto de soporte, lamento las molestias"
     }
+                    // -------------------------------
                     //buscar en diversas plataformas
+                    // -------------------------------
+
     else if (cmd. indexOf('busca en google') > -1 || cmd.indexOf('buscar en google') > -1){
         url = cmd;
         wink();
@@ -170,7 +180,10 @@ else{
         respuesta = "¡Ok"+username+"! buscando en facebook market place"+url;
         window.open('https://www.facebook.com/marketplace/103740209665322/search/?query='+url);   
     }
+                    // -------------------------------
                     //habrir aplicaciones y redes sociales
+                    // -------------------------------
+
     else if (cmd.indexOf("abrir google") > -1 || cmd.indexOf('abre google') > -1 || cmd.indexOf('busca google') > -1 || cmd.indexOf('ir a google') > -1){
         window.open('https://google.com/'); 
         wink();
@@ -214,15 +227,17 @@ else{
         wink();
         respuesta = "¡Ok"+username+"! Abriendo la página principal de los Testigos de Jehova.";
     }
-    
+                    // -------------------------------
                         //recordar eventos
-    else if (cmd.indexOf("mi recordatorio") > -1 || cmd.indexOf('lee mi agenda') > -1 || cmd.indexOf('que hay') > -1 && cmd.indexOf('agenda') > -1) {
-        if (remember === "") {
-            respuesta = "estas libre, no hay nada en la agenda"
-        }else{
-        respuesta = "Actualmente en tu agenda hay que "+remember;
-        }
-    }
+                    // -------------------------------
+
+    // else if (cmd.indexOf("mi recordatorio") > -1 || cmd.indexOf('lee mi agenda') > -1 || cmd.indexOf('que hay') > -1 && cmd.indexOf('agenda') > -1) {
+    //     if (remember === "") {
+    //         respuesta = "estas libre, no hay nada en la agenda"
+    //     }else{
+    //     respuesta = "Actualmente en tu agenda hay que "+remember;
+    //     }
+    // }
     // else if (cmd.indexOf("borrar recordatorio") > -1 || cmd.indexOf('eliminar recordatorio') > -1 || cmd.indexOf('limpia') > -1 && cmd.indexOf('agenda') > -1 || cmd.indexOf('eliminar') > -1 && cmd.indexOf('agenda') > -1) {
     //     localStorage.removeItem("remember_all_day"),
     //     localStorage.removeItem("remember_1"),
@@ -317,7 +332,7 @@ else{
 
     }
     if (cmd.includes("nada gracias")) {
-        hablar("ok")
+        respuesta = "ok";
     }
     
     
