@@ -58,7 +58,7 @@ if (reconocimientoContinuo == 1) {
         setTimeout(() => {
             hablar("sistemas iniciados, iniciando reconocimiento de voz automatico");
             setTimeout(() => {
-                recognitionStart.start()
+                CallRecognition.start()
             }, 2000);
         }, 8000);
     });
