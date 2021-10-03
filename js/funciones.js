@@ -65,6 +65,7 @@ function start_lite(iniciarOApagar) {
     cmd = cmd.replace("energia", "");
     cmd = cmd.replace("ilogica", "");
     cmd = cmd.replace("ilogico", "");
+    cmd = cmd.replace("llamame", "");
     cmd = cmd.replace("perfecto", "");
     cmd = cmd.replace("encuentras", "");
     cmd = cmd.replace("legendario", "");
@@ -477,3 +478,5 @@ function iniciarReconocimientoContinuo(){
         }, 8000);
     
 }
+
+console.log("Funciones cargadas")

@@ -1,3 +1,4 @@
+
 function comandos(cmd) {
                     // -------------------------------
                      // comandos interactivos
@@ -10,7 +11,7 @@ function comandos(cmd) {
         respuesta = '¡Muy bien! ¡Gracias por preguntar!';
         animaciones("alegrarse");
     } 
-    else if (cmd.indexOf('mi nombre') > -1 || cmd.indexOf('me llamo') > -1){
+    else if (cmd.includes('mi nombre') || cmd.includes('me llamo') || cmd.includes('llamame')){
             let nombre = cmdSimplifyToName(cmd);
             localStorage.setItem("haynombre", "si")
             localStorage.setItem("name"," "+(nombre));
@@ -181,7 +182,7 @@ else{
         window.open('https://www.facebook.com/marketplace/103740209665322/search/?query='+url);   
     }
                     // -------------------------------
-                    //habrir aplicaciones y redes sociales
+                    //abrir aplicaciones y redes sociales
                     // -------------------------------
 
     else if (cmd.indexOf("abrir google") > -1 || cmd.indexOf('abre google') > -1 || cmd.indexOf('busca google') > -1 || cmd.indexOf('ir a google') > -1){
@@ -339,9 +340,12 @@ else{
 // buscar lo que el usuario diga sin necesidad de google
    if (respuesta === ""){
        animaciones("deprimirse");
+       setTimeout(() => {
+           CallRecognition.start()
+       }, 5000);
        respuesta = "Aparentemente no tengo respuesta a tu comando, así que lo buscare en google";
        window.open('https://www.google.com/search?q='+cmd);  
     }
     peticionCumplida = "si";
 }
-
+console.log("comandos cargados")

@@ -113,3 +113,5 @@ start_lite("apagar")
 }
 
 
+console.log("Reconocimientos de voz cargados");
+

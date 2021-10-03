@@ -40,3 +40,5 @@ let ficha_3 = "inactiva";
 let ficha_4 = "inactiva";
 let decition;
 let permitir_sacar_otras_fichas = false;
+
+console.log("Variables cargadas");

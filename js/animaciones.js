@@ -271,3 +271,5 @@ function apagado(iniciarOApagar) {
             },400) 
         }
 }
+
+console.log("motor de animaciones cargadas")

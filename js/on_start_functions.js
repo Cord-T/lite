@@ -75,3 +75,5 @@ CargarVoces();
   if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = CargarVoces;
 }
+
+console.log("funciones de inicio cargadas");

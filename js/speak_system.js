@@ -8,3 +8,5 @@ function hablar(respuesta) {
   console.log(respuesta.text); 
     
 }
+
+console.log("sistema de voz cargado");

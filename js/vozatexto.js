@@ -22,3 +22,5 @@ recognition.onresult = (event) => {
     console.log(frase);
     texto.value += frase;
 }
+
+console.log("Sistema de voz a texto, cargado");

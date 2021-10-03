@@ -32,6 +32,6 @@ if (voces == null) {
     localStorage.setItem("voz",0);
     voces = localStorage.getItem("voz");
 }
-
+console.log("Datos Cargados")
 
 
