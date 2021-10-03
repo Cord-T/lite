@@ -10,7 +10,7 @@
 </head>
 <body>   
 
-    <div onclick="recognition.start()" id="particles-js"></div>
+    <div onclick="recognition.start()" id="reconocimentScreen"></div>
    <!-- cabeza de lite -->
     <div class="liteHead " id="LiteHead">
 
@@ -35,28 +35,33 @@
     </div>
     <div class="botonConfig" onclick="sacarOptionsMenu()"> <img class="configSVG" src="img/config.svg" alt=""></div>
     <div class="optionsMenu ocultarVentana" id="optionsMenu">
-        <p style="top: 5%;" class="configText">Particulas:</p>
-        <select class="configOption" style="position: absolute; top: 15%; left: 5%; border-radius: 0.5vw;" id="seleccionarParticulas">
+        <!-- <p style="top: 5%;" class="configText">Particulas:</p>
+        <select class="configOption"  id="seleccionarParticulas"> -->
             <!-- selecciona la cantidad de particulas  -->
-            <option value="0" label="Apagadas"> </option>
+            <!-- <option value="0" label="Apagadas"> </option>
             <option value="10" label="Minimas"> </option>
             <option value="40" label="Medas(Cuidado)"> </option>
             <option value="110" label="Altas(Mas consumo)"> </option>
-        </select>
+        </select> -->
         <p style="top: 20%;" class="configText">Colores/Temas:</p>
-        <select class="configOption" style="position: absolute; top: 30%; left: 5%; border-radius: 0.5vw;" id="seleccionarColor">
+        <select class="configOption" id="seleccionarColor">
             <!-- selecciona el color  -->
             <option value="default" label="Por Defecto"> </option>
             <option value="multiColor" label="multiColor"> </option>
         </select>
 
-        <p style="font-size: 70%;top: 35%;" class="configText">Activar o desactivar el reconocimiento continuo</p>
-        <button class="configOption" style="position: absolute; top: 47%; left: 5%; border-radius: 0.5vw;" onclick='RNC("cerrarAbrirVentana")' >Activar o Desactivar</button>
-        <p style="font-size: 70%;top: 48%;" class="configText">Seleccionar Voz</p>
-        <button class="configOption" style="position: absolute; top: 57%; left: 5%; border-radius: 0.5vw;" onclick='ventana("mostrar", "voz")' >seleccionar</button>
-        <button class="configButton" style="position: absolute; top: 70%; left: 5%; border-radius: 0.5vw;"onclick="cambiarOpciones()">Aplicar</button>
-        <button class="configButton" style="position: absolute; top: 70%; left: 35%; border-radius: 0.5vw;"onclick="sacarOptionsMenu()">Cerrar</button>
-        <button class="configButton" style="position: absolute; top: 70%; left: 65%; border-radius: 0.5vw;"onclick="sacarOptionsMenu()">Aceptar</button>
+        <p  class="configText">Activar o desactivar el reconocimiento continuo</p>
+        <button class="configOption" onclick='RNC("cerrarAbrirVentana")' >Activar o Desactivar</button>
+        <p class="configText">Seleccionar Voz</p>
+        <button class="configOption" onclick='ventana("mostrar", "voz")' >seleccionar</button>
+        <p>Probar Voz</p>
+        <button onclick='hablar("esta es una prueba efectiva y sencilla de voz para que el usuario quede a gusto")'>Probar</button>
+
+        <div class="accionesDeVentana">
+        <button class="aplicar" onclick="cambiarOpciones()">Aplicar</button>
+        <button class="cerrar" onclick="sacarOptionsMenu()">Cerrar</button>
+        <button class="aceptar" onclick="sacarOptionsMenu()">Aceptar</button>
+    </div>
     </div>
 <div class="ventanas" id="ventanas">
     <div id="ventanaDeRNC" class="ventana ocultarVentana">

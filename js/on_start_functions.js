@@ -52,17 +52,11 @@ themeAutoSelect()
 despertar();
 
 if (reconocimientoContinuo == 1) {
-    const liteStartButon = document.getElementById("cabeza");
-    liteStartButon.addEventListener("click", () => {
-        apagado("iniciar");
-        setTimeout(() => {
-            hablar("sistemas iniciados, iniciando reconocimiento de voz automatico");
-            setTimeout(() => {
-                CallRecognition.start()
-            }, 2000);
-        }, 8000);
-    });
     apagado("apagar");
+    const liteStartButon = document.getElementById("cabeza");
+    const reconociment = document.getElementById("reconocimentScreen");  
+    liteStartButon.setAttribute("onclick", "iniciarReconocimientoContinuo()");
+    reconociment.removeAttribute("onclick", "recognition.start()");
 }
 
 if (iniciadoPorPrimeraV == 0) {

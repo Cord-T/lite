@@ -1,9 +1,10 @@
-function hablar(respuesta) {
+function hablar(respuesta) {  
+  let Anim = respuesta.length/4.5;
   respuesta = new SpeechSynthesisUtterance(respuesta);
   let voices = speechSynthesis.getVoices();
   respuesta.voice = voices[voces];
   speechSynthesis.speak(respuesta);
-  animacionHablar(respuesta.length/4.5)
+  animacionHablar(Anim);
   console.log(respuesta.text); 
     
 }

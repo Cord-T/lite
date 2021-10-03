@@ -13,6 +13,12 @@ body{
     height: 100vh;
 }
 
+.recognition{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 /* iconos y animaciones de iconos */
 .microfono{
     position: absolute;
@@ -106,11 +112,37 @@ body{
     width: 20%;
     height: 70%;
 }
-.optionsConfig{
-    width: 10vw;
+.optionsMenu button{
+    width: 45%;
+    height: 5%;
+    left: 0%;
+    margin-top: 2%;
 }
-.configButtons{
-    width: 3vw;
+
+.optionsMenu select{
+    width: 45%;
+    height: 5%;
+}
+
+.optionsMenu p{
+    width: 75%;
+}
+
+
+.accionesDeVentana{
+    bottom: 5%;
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.accionesDeVentana button{
+    width: 25%;
+    height: 100%;
+    margin: 2%;
 }
 .ventana{
     transition: right 2s;
@@ -147,7 +179,6 @@ body{
     font-size: 70%;
 }
 .configText{
-    position: absolute;
     width: 90%;
     height: 1vw;
 }
@@ -843,5 +874,17 @@ animation: aburrirOjos 3s ease;
 .ventana{
 transform: scale(2.5);
 }
-
+.ventana p{
+    font-size: 1.5vw;
+}
+.ventana button{
+    font-size: 1vw;
+}
+.ventana select{
+    font-size: 1vw;
+}
+.optionsMenu p{
+    font-size: 3vw;
+    height: 7%;
+}
 }

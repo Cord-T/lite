@@ -461,3 +461,19 @@ function ventana(quehacer, aQuien) {
         ventanaDeVoz.classList.remove("ocultarVentana");
     }
 }
+
+
+function iniciarReconocimientoContinuo(){
+    const liteStartButon = document.getElementById("cabeza");
+    const reconociment = document.getElementById("reconocimentScreen");
+        apagado("iniciar");
+        setTimeout(() => {
+            hablar("sistemas iniciados, iniciando reconocimiento de voz automatico");
+            setTimeout(() => {
+                CallRecognition.start()
+                liteStartButon.removeAttribute("onclick", "iniciarReconocimientoContinuo()");
+                reconociment.setAttribute("onclick", "recognition.start()");
+            }, 2000);
+        }, 8000);
+    
+}
