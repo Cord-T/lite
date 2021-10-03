@@ -479,4 +479,11 @@ function iniciarReconocimientoContinuo(){
     
 }
 
-console.log("Funciones cargadas")
+
+
+
+
+
+
+
+console.log("Funciones cargadas");

@@ -8,15 +8,6 @@ CallRecognition.lang = 'es-ES';
 CallRecognition.continuous = false;
 CallRecognition.interResults = true;
 
-CallRecognition.addEventListener("start", () => {
-setTimeout(() => {
-    CallRecognition.stop()
-    setTimeout(() => {
-        CallRecognition.start()
-    }, 500);
-}, 5000);
-});
-
 CallRecognition.onresult = (event) => {
     // establecerle a una variable el valor de lo que dice el usuario
     const results = event.results;
@@ -46,7 +37,7 @@ CallRecognition.onresult = (event) => {
        setTimeout(() => {
            recognition.start()
            seEjecutoComando = true;
-       }, 2000);
+       }, 1600);
     }
     else{
         
@@ -57,9 +48,9 @@ CallRecognition.onend = function () {
         if (seEjecutoComando == false) {
             setTimeout(() => {
                 CallRecognition.start();
-            }, 500);
+            }, 1000);
         } 
-    }, 2000);
+    }, 2700);
   
 }
 
