@@ -8,6 +8,15 @@ CallRecognition.lang = 'es-ES';
 CallRecognition.continuous = false;
 CallRecognition.interResults = true;
 
+CallRecognition.addEventListener("start", () => {
+setTimeout(() => {
+    CallRecognition.stop()
+    setTimeout(() => {
+        CallRecognition.start()
+    }, 500);
+}, 5000);
+});
+
 CallRecognition.onresult = (event) => {
     // establecerle a una variable el valor de lo que dice el usuario
     const results = event.results;
@@ -102,12 +111,11 @@ recognition.onresult = (event) => {
 // establecer un evento al terminar el reconocimiento 
 recognition.onend = function () {
     EyeError(0);
-    
     // se pregunta si la opcion reconocimientoContinuo esta activa, si lo esta entonces al finalizar el reconocimiento de comandos inicia este automaticamente 
     if (reconocimientoContinuo == 1) {
         setTimeout(() => {
             CallRecognition.start()
-        }, 2000);  
+        }, 3000);  
     }
 start_lite("apagar")
 }

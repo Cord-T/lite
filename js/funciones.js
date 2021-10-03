@@ -412,7 +412,7 @@ function EyeError(enUso) {
             recognition.stop()
             enUso = 0;
         }
-    }, 11500);
+    }, 7000);
 
 }
 

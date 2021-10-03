@@ -342,11 +342,8 @@ else{
     
     
 // buscar lo que el usuario diga sin necesidad de google
-   if (respuesta === ""){
+   if (respuesta == ""){
        animaciones("deprimirse");
-       setTimeout(() => {
-           CallRecognition.start()
-       }, 5000);
        respuesta = "Aparentemente no tengo respuesta a tu comando, así que lo buscare en google";
        window.open('https://www.google.com/search?q='+cmd);  
     }
