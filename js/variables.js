@@ -22,9 +22,11 @@ var atender = [
     "aqui estoy"
 ];
 const fecha = new Date();
+var month = fecha.getUTCMonth();
 var today = fecha.getDate();
 var hour = fecha.getHours();
 var minutes = fecha.getMinutes();
+let mes = JSON.stringify(month);
 let hoy = JSON.stringify(today);
 let hora = JSON.stringify(hour);
 let minutos = JSON.stringify(minutes);

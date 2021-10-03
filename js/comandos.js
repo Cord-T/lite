@@ -26,7 +26,7 @@ function comandos(cmd) {
         respuesta = chistes[numero_aleatorio(10)];
         animaciones("alegrarse");
     }
-     else if (cmd.indexOf("repite despues de mi") > -1 || cmd.indexOf('di despues de mi') === 0) {
+    else if (cmd.indexOf("repite despues de mi") > -1 || cmd.indexOf('di despues de mi') === 0) {
         repetir = cmd;
         repetir = repetir.replace("repite despues de mi","");
         respuesta = repetir;
@@ -53,10 +53,10 @@ function comandos(cmd) {
         animaciones("sonreir");
 
         }
-        else if (cmd.includes("buen") && cmd.includes("dia") && cmd.length < 25 || cmd.includes("buenos") && cmd.includes("dias") && cmd.length < 25) {
-            respuesta = "Buenos dias"+username+", que tengas un dia productivo"
+    else if (cmd.includes("buen") && cmd.includes("dia") && cmd.length < 25 || cmd.includes("buenos") && cmd.includes("dias") && cmd.length < 25) {
+        respuesta = "Buenos dias"+username+", que tengas un dia productivo"
     
-            }
+        }
                     // -------------------------------
                     //comandos de utilidades
                     // -------------------------------
@@ -116,7 +116,9 @@ else{
         in_game == false;
     }
     else if (cmd.includes("que") && cmd.includes("hora") && cmd.length < 15 || cmd.includes("dime la") && cmd.includes("hora") && cmd.length < 15||cmd.includes("hora") && cmd.length < 15) {
-        respuesta = "son las "+hour+" con "+minutes+" minutos"
+        respuesta = "son las "+hora+" con "+minutos+" minutos"
+    }   else if (cmd.includes("que") && cmd.includes("dia") && cmd.length < 15 || cmd.includes("dime la") && cmd.includes("fecha") && cmd.length < 15||cmd.includes("dia") && cmd.length < 15) {
+        respuesta = "es el dia "+hoy+" del mes "+mes;
     }
                     // -------------------------------
                     //configuracion de usuario
@@ -153,6 +155,8 @@ else{
         url = cmd;
         wink();
         url = url.replace("busca en google", "");
+        url = url.replace("busca en internet", "");
+        url = url.replace("buscar en internet", "");
         url = url.replace("buscar en google", "");
         respuesta = "¡Ok"+username+"! buscando en google"+url;
         window.open('https://www.google.com/search?q='+url);   

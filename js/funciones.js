@@ -466,7 +466,7 @@ function ventana(quehacer, aQuien) {
 
 function iniciarReconocimientoContinuo(){
     const liteStartButon = document.getElementById("cabeza");
-    const reconociment = document.getElementById("reconocimentScreen");
+    let reconociment = document.getElementById("reconocimentScreen");
         apagado("iniciar");
         setTimeout(() => {
             hablar("sistemas iniciados, iniciando reconocimiento de voz automatico");
