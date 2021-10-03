@@ -50,7 +50,7 @@ CallRecognition.onend = function () {
                 CallRecognition.start();
             }, 500);
         } 
-    }, 1500);
+    }, 2000);
   
 }
 
