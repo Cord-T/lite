@@ -13,17 +13,23 @@
     <div onclick="recognition.start()" id="particles-js"></div>
    <!-- cabeza de lite -->
     <div class="liteHead " id="LiteHead">
+
         <div class="orejaA" id="orejaA"></div>
         <div class="orejaB" id="orejaB"></div>
         <div class="cabeza" id="cabeza">
-            <img class="offSVG oculto" id="offSVG" src="img/off.svg" alt="">
-            <img id="microfonoSVG" class="microfono oculto" src="img/micro.svg" alt="">
+
+                <img class="offSVG oculto" id="offSVG" src="img/off.svg" alt="">
+                <img id="microfonoSVG" class="microfono oculto" src="img/micro.svg" alt="">
+
         </div>
-        <div class="ojos" id="ojos">
-            <div class="ojo ojo1" onclick="pestañear()" id="ojo1"></div>
-            <div class="ojo ojo2" onclick="pestañear()" id="ojo2"></div>
-        </div>
-        <div class="voca" id="voca"></div>
+            <div class="ojos" id="ojos">
+
+                <div class="ojo ojo1" onclick="pestañear()" id="ojo1"></div>
+                <div class="ojo ojo2" onclick="pestañear()" id="ojo2"></div>
+
+            </div>
+
+            <div class="voca" id="voca"></div>
 
     
     </div>
@@ -46,11 +52,13 @@
 
         <p style="font-size: 70%;top: 35%;" class="configText">Activar o desactivar el reconocimiento continuo</p>
         <button class="configOption" style="position: absolute; top: 47%; left: 5%; border-radius: 0.5vw;" onclick='RNC("cerrarAbrirVentana")' >Activar o Desactivar</button>
-        <button class="configButton" style="position: absolute; top: 60%; left: 5%; border-radius: 0.5vw;"onclick="cambiarOpciones()">Aplicar</button>
-        <button class="configButton" style="position: absolute; top: 60%; left: 35%; border-radius: 0.5vw;"onclick="sacarOptionsMenu()">Cerrar</button>
-        <button class="configButton" style="position: absolute; top: 60%; left: 65%; border-radius: 0.5vw;"onclick="sacarOptionsMenu()">Aceptar</button>
+        <p style="font-size: 70%;top: 48%;" class="configText">Seleccionar Voz</p>
+        <button class="configOption" style="position: absolute; top: 57%; left: 5%; border-radius: 0.5vw;" onclick='ventana("mostrar", "voz")' >seleccionar</button>
+        <button class="configButton" style="position: absolute; top: 70%; left: 5%; border-radius: 0.5vw;"onclick="cambiarOpciones()">Aplicar</button>
+        <button class="configButton" style="position: absolute; top: 70%; left: 35%; border-radius: 0.5vw;"onclick="sacarOptionsMenu()">Cerrar</button>
+        <button class="configButton" style="position: absolute; top: 70%; left: 65%; border-radius: 0.5vw;"onclick="sacarOptionsMenu()">Aceptar</button>
     </div>
-
+<div class="ventanas" id="ventanas">
     <div id="ventanaDeRNC" class="ventana ocultarVentana">
         <p style=" margin-left: 10%; font-size: 1.1vw; color: rgb(0, 0, 0);">Esta opcion puede relentizar su sistema si no cuenta con recursos recomendables, si aun asi desea activarlo, diga oye lite, o hey lite activara a la asistenta</p>
         
@@ -59,7 +67,16 @@
         <button class="RNCbottons" style="left: 70%;" onclick='RNC("cerrarAbrirVentana")'>Cerrar</button> 
     </div>   
 
-    
+    <div id="ventanaDeVoz" class="ventana ocultarVentana">
+        <p>Bueno slecciona la voz... o como sea</p>
+        <select id="voiceSelect"></select>
+        <button class="aceptar"onclick="selectVoice()">Aceptar</button>
+        <button class="cerrar"onclick='ventana("cerrar","voz")'>Cerrar</button>
+
+
+    </div>
+
+</div>
     
 </div>
 
@@ -86,6 +103,6 @@ solo suceden una vez -->
 <script src="js/speak_system.js"></script>
 
 
-<script src="js/particulas.js/particles.js"></script>
-<script src="js/particulas.js/app.js"></script>
+<!-- <script src="js/particulas.js/particles.js"></script>
+<script src="js/particulas.js/app.js"></script> -->
 </html>

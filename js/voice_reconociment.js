@@ -50,7 +50,7 @@ CallRecognition.onend = function () {
                 CallRecognition.start();
             }, 500);
         } 
-    }, 2000);
+    }, 1000);
   
 }
 
@@ -107,7 +107,7 @@ recognition.onend = function () {
     if (reconocimientoContinuo == 1) {
         setTimeout(() => {
             CallRecognition.start()
-        }, 5000);  
+        }, 2000);  
     }
 start_lite("apagar")
 }

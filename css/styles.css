@@ -7,18 +7,12 @@ body{
     flex-direction: column;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
-
-    height: 100vh;
-}
-#particles-js{
-    width: 100%;
-    height: 100%;
     background: linear-gradient(150deg, #c5c5c5, #000000, #777777);
     background-size: 400% 300%;
-   
     animation: wallpaper 20s ease infinite;
-    
+    height: 100vh;
 }
+
 /* iconos y animaciones de iconos */
 .microfono{
     position: absolute;
@@ -74,6 +68,13 @@ body{
         }
 }
 /* ventanas  */
+.ventanas{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
 .ventanaBusqueda{
     top: 10%;
     position: fixed;
@@ -119,6 +120,31 @@ body{
     top: 10%; 
     background-color: rgba(255, 255, 255, 0.664); 
     border-radius: 2vw;
+}
+
+.ventana select{
+    width: 35%;
+    height: 30%;
+    position: absolute;
+    top: 60%;
+    left: 60%;
+}
+.ventana button{
+    position: absolute;
+    top: 60%;
+    border-radius: 0.5vw;
+    width: 25%;
+    height: 30%;
+    font-size: 65%;
+}
+.ventana .aceptar{
+    left: 4%;
+}
+.ventana .cerrar{
+    left: 32%;
+}
+.ventana p{
+    font-size: 70%;
 }
 .configText{
     position: absolute;

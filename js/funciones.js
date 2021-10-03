@@ -408,10 +408,56 @@ function RNC(comando) {
 function EyeError(enUso) {
     setTimeout(() => {
         if (peticionCumplida == "no" && enUso == 1) {
-            hablar("Lo lamento, ocurrio un error y para proteger el dispositivo cancele el reconocimiento, intente volver a ejecutar el comando, y si sigue fallando puede comunicarse con el soporte")
             recognition.stop()
             enUso = 0;
         }
-    }, 35000);
+    }, 11500);
 
+}
+
+
+function CargarVoces() {
+    if(typeof speechSynthesis === 'undefined') {
+      return;
+    }
+  
+    voices = speechSynthesis.getVoices();
+  
+    for(i = 0; i < voices.length ; i++) {
+        if(voices[i].lang == "es-ES" || voices[i].lang == "es-US") {
+        var option = document.createElement('option');
+        option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+        option.setAttribute('data-lang', voices[i].lang);
+        option.setAttribute('data-name', voices[i].name);
+        option.setAttribute('value', i);
+        option.setAttribute('onclick', "selectVoice("+i+")");
+        document.getElementById("voiceSelect").appendChild(option);
+      }
+      if(voices[i].default) {
+        option.textContent += ' -- Por Defecto';
+      }
+  
+     
+    }
+  }
+  
+  
+
+
+function selectVoice(){
+let setVoice = document.getElementById("voiceSelect").value;
+localStorage.setItem("voz", setVoice);
+location.reload();
+}
+
+function ventana(quehacer, aQuien) {
+    let ventanas = document.getElementById("ventanas")
+    let ventanaDeVoz = document.getElementById("ventanaDeVoz");
+
+    if (quehacer == "cerrar" && aQuien == "voz") {
+        ventanaDeVoz.classList.add("ocultarVentana");
+    }
+    else if (quehacer == "mostrar" && aQuien == "voz") {
+        ventanaDeVoz.classList.remove("ocultarVentana");
+    }
 }

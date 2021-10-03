@@ -27,6 +27,11 @@ if (iniciadoPorPrimeraV == null) {
 // esta variable es para el sistema de seguridad no vaya a ser que lite inicie o haga el comando varias veces 
 var peticionCumplida = "no";
 
+var voces = localStorage.getItem("voz");
+if (voces == null) {
+    localStorage.setItem("voz",0);
+    voces = localStorage.getItem("voz");
+}
 
 
 

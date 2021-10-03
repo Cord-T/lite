@@ -76,3 +76,8 @@ if (iniciadoPorPrimeraV == 0) {
     });
     apagado("apagar");
 }
+
+CargarVoces();
+  if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = CargarVoces;
+}
