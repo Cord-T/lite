@@ -81,7 +81,7 @@ function comandos(cmd) {
     else if (cmd.includes("te") && cmd.includes("toca") && cmd.length < 20 || cmd.includes("turno")  && cmd.length < 15) {
         if (in_game == true) {
             respuesta = ".";
-            jugar_ludo();
+            jugarLudo();
         }
         else{
             respuesta = "lo siento, no estoy jugando en este momento, si quiere que juege solo inviteme a jugar, por ahora solo puedo servir como un dado o puedo jugar ludo a medias"
@@ -117,7 +117,8 @@ else{
     }
     else if (cmd.includes("que") && cmd.includes("hora") && cmd.length < 15 || cmd.includes("dime la") && cmd.includes("hora") && cmd.length < 15||cmd.includes("hora") && cmd.length < 15) {
         respuesta = "son las "+hora+" con "+minutos+" minutos"
-    }   else if (cmd.includes("que") && cmd.includes("dia") && cmd.length < 15 || cmd.includes("dime la") && cmd.includes("fecha") && cmd.length < 15||cmd.includes("dia") && cmd.length < 15) {
+    }
+    else if (cmd.includes("que") && cmd.includes("dia") && cmd.length < 15 || cmd.includes("dime la") && cmd.includes("fecha") && cmd.length < 15||cmd.includes("dia") && cmd.length < 15) {
         respuesta = "es el dia "+hoy+" del mes "+mes;
     }
                     // -------------------------------

@@ -84,21 +84,20 @@ function start_lite(iniciarOApagar) {
     cmd = cmd.replace("llamo", "");
     cmd = cmd.replace("hola", "");
     cmd = cmd.replace("lets", "");
-    cmd = cmd.replace("tal", "");
+    cmd = cmd.replace(" tal ", "");
     cmd = cmd.replace("lait", "");
-    cmd = cmd.replace("que", "");
-    cmd = cmd.replace("que", "");
-    cmd = cmd.replace("era", "");
-    cmd = cmd.replace("mal", "");
-    cmd = cmd.replace("mi", "");
-    cmd = cmd.replace("me", "");
-    cmd = cmd.replace("tu", "");
-    cmd = cmd.replace("es", "");
-    cmd = cmd.replace("is", "");
-    cmd = cmd.replace("te", "");
-    cmd = cmd.replace("el", "");
-    cmd = cmd.replace("es", "");
-    cmd = cmd.replace("eh", "");
+    cmd = cmd.replace(" que ", "");
+    cmd = cmd.replace(" era ", "");
+    cmd = cmd.replace(" mal ", "");
+    cmd = cmd.replace(" mi ", "");
+    cmd = cmd.replace(" me ", "");
+    cmd = cmd.replace(" tu ", "");
+    cmd = cmd.replace(" es ", "");
+    cmd = cmd.replace(" is ", "");
+    cmd = cmd.replace(" te ", "");
+    cmd = cmd.replace(" el ", "");
+    cmd = cmd.replace(" es ", "");
+    cmd = cmd.replace(" eh ", "");
     
     return cmd
 }
