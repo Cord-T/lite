@@ -68,10 +68,10 @@ function comandos(cmd) {
         respuesta = "de acuerdo, iniciando busqueda avanzada";
         window.open("https://www.google.com/search?q="+cmd+"+-inurl%3A%28htm%7Chtml%7Cphp%7Cpls%7Ctxt%29+intitle%3Aindex.of+%22last+modified%22+%28mp4%7Cwmv%7Caac%7Cavi%29&rlz=1C1CHBF_esVE969VE969&sxsrf=AOaemvK21bXbEbAEEB2Ihg6LBBI-1QACiw%3A1632405073724&ei=UYZMYdPFK5aNwbkPs5ilwAY&oq=avengers+-inurl%3A%28htm%7Chtml%7Cphp%7Cpls%7Ctxt%29+intitle%3Aindex.of+%22last+modified%22+%28mp4%7Cwmv%7Caac%7Cavi%29&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANKBAhBGABQzq0OWLGuDmCKsg5oAXACeACAAQCIAQCSAQCYAQCgAQHIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwiTsrHknpXzAhWWRjABHTNMCWgQ4dUDCA4&uact=5")
     }
-    else if (cmd.indexOf('Investiga sobre') > -1 || cmd.includes("haz una busqueda avanzada sobre un archivo llamado")){
+    else if (cmd.indexOf('Investiga sobre') > -1 || cmd.includes("haz una busqueda avanzada sobre un archivo llamado") || cmd.includes("busca todo lo que hay sobre")){
         cmd = cmd.replace("Investiga sobre", "");
         cmd = cmd.replace("haz una busqueda avanzada sobre un archivo llamado", "");
-        
+        cmd = cmd.replace("busca todo lo que hay sobre", "");
         wink()
         // +-inurl:(php|pls) intitle:index.of "last modified" (html|iso|txt|avi|mp4|wav);
         respuesta = "de acuerdo, iniciando busqueda avanzada en multiples sitios web sobre"+cmd;
