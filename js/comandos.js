@@ -68,8 +68,8 @@ function comandos(cmd) {
         respuesta = "de acuerdo, iniciando busqueda avanzada";
         window.open("https://www.google.com/search?q="+cmd+"+-inurl%3A%28htm%7Chtml%7Cphp%7Cpls%7Ctxt%29+intitle%3Aindex.of+%22last+modified%22+%28mp4%7Cwmv%7Caac%7Cavi%29&rlz=1C1CHBF_esVE969VE969&sxsrf=AOaemvK21bXbEbAEEB2Ihg6LBBI-1QACiw%3A1632405073724&ei=UYZMYdPFK5aNwbkPs5ilwAY&oq=avengers+-inurl%3A%28htm%7Chtml%7Cphp%7Cpls%7Ctxt%29+intitle%3Aindex.of+%22last+modified%22+%28mp4%7Cwmv%7Caac%7Cavi%29&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANKBAhBGABQzq0OWLGuDmCKsg5oAXACeACAAQCIAQCSAQCYAQCgAQHIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwiTsrHknpXzAhWWRjABHTNMCWgQ4dUDCA4&uact=5")
     }
-    else if (cmd.indexOf('Investiga sobre') > -1 || cmd.includes("haz una busqueda avanzada sobre un archivo llamado") || cmd.includes("busca todo lo que hay sobre")){
-        cmd = cmd.replace("Investiga sobre", "");
+    else if (cmd.indexOf('investiga sobre') > -1 || cmd.includes("haz una busqueda avanzada sobre un archivo llamado") || cmd.includes("busca todo lo que hay sobre")){
+        cmd = cmd.replace("investiga sobre", "");
         cmd = cmd.replace("haz una busqueda avanzada sobre un archivo llamado", "");
         cmd = cmd.replace("busca todo lo que hay sobre", "");
         wink()
@@ -83,7 +83,7 @@ function comandos(cmd) {
         setTimeout(() => {
         window.open("https://www.amazon.com/s/ref=nb_sb_noss_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&url=search-alias%3Daps&field-keywords="+cmd);
         setTimeout(() => {
-        window.open("www.instagram.com/"+cmd);
+        window.open("https://www.instagram.com/"+cmd);
         setTimeout(() => {
         window.open("https://www.facebook.com/search/top/?q="+cmd);
         setTimeout(() => {
@@ -93,7 +93,7 @@ function comandos(cmd) {
         setTimeout(() => {
         window.open('https://www.gamestorrents.fm/?s='+cmd);
         setTimeout(() => {
-        window.open('https://pivigames.blog/?s=wika'+cmd);
+        window.open('https://pivigames.blog/?s='+cmd);
         }, 900);
         }, 900);
         }, 900);
@@ -169,11 +169,16 @@ else{
         
         respuesta = 'tutorial desactivado';
     }
-    // soporte
-    
+                    // ---------------
+                    // soporte
+                    // ---------------
     else if (cmd. indexOf('lista de comandos') > -1 || cmd.indexOf('guia de comandos') > -1 || cmd.indexOf('buscar') > -1 &&  cmd.indexOf('guia') > -1){
         // window.open('https://www.google.com/search?q='+url);   
         respuesta = "por ahora la lista de comandos no esta disponible, lamento las molestias"
+    }
+    else if (cmd. indexOf('abre tu repositorio') > -1 || cmd.indexOf('abre tu base de datos') > -1 || cmd.indexOf('dame acceso a tus archivos') > -1 &&  cmd.indexOf('dejame acceder a tus datos') > -1){
+        window.open("https://github.com/TAB0O/lite");   
+        respuesta = "De acuerdo, habriendo mi repositorio en github"
     }
     else if (cmd. indexOf('contactar') > -1 && cmd.indexOf('soporte') > -1 || cmd.indexOf('buscar') > -1 && cmd.indexOf('soporte') > -1){
         window.open('https://www.facebook.com/Para.que.me.lees/');   
