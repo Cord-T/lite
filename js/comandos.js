@@ -188,22 +188,16 @@ else{
                     //buscar en diversas plataformas
                     // -------------------------------
 
-    else if (cmd. indexOf('busca en google') > -1 || cmd.indexOf('buscar en google') > -1){
-        url = cmd;
-        wink();
-        url = url.replace("busca en google", "");
-        url = url.replace("buscar en google", "");
-        respuesta = "¡Ok"+username+"! buscando en google"+url;
-        window.open('https://www.google.com/search?q='+url);   
-    }
-    else if (cmd. indexOf('busca en internet') > -1 || cmd.indexOf('buscar en internet') > -1){
+    else if (cmd.includes('busca en google') || cmd.includes('buscar en google') || cmd.includes('busca en internet') || cmd.includes('buscar en internet') || cmd.includes('busca') || cmd.includes('buscar')){
         url = cmd;
         wink();
         url = url.replace("busca en google", "");
         url = url.replace("busca en internet", "");
         url = url.replace("buscar en internet", "");
         url = url.replace("buscar en google", "");
-        respuesta = "¡Ok"+username+"! buscando en google"+url;
+        url = url.replace("busca", "");
+        url = url.replace("buscar", "");
+        respuesta = "¡Ok"+username+"! buscando en internet"+url;
         window.open('https://www.google.com/search?q='+url);   
     }
     else if (cmd. indexOf('busca en youtube') > -1 || cmd. indexOf('busca') > -1 && cmd. indexOf('youtube') > -1){
