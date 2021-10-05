@@ -176,7 +176,7 @@ else{
         // window.open('https://www.google.com/search?q='+url);   
         respuesta = "por ahora la lista de comandos no esta disponible, lamento las molestias"
     }
-    else if (cmd. indexOf('abre tu repositorio') > -1 || cmd.indexOf('abre tu base de datos') > -1 || cmd.indexOf('dame acceso a tus archivos') > -1 &&  cmd.indexOf('dejame acceder a tus datos') > -1){
+    else if (cmd. indexOf('abre tu repositorio') > -1 || cmd.indexOf('abre tu base de datos') > -1 || cmd.indexOf('dame acceso a tus archivos') > -1 ||  cmd.indexOf('dejame acceder a tus datos') > -1){
         window.open("https://github.com/TAB0O/lite");   
         respuesta = "De acuerdo, habriendo mi repositorio en github"
     }
@@ -388,8 +388,7 @@ else{
     
 // buscar lo que el usuario diga sin necesidad de google
    if (respuesta == ""){
-       animaciones("deprimirse");
-       respuesta = "Aparentemente no tengo respuesta a tu comando, así que lo buscare en google";
+       respuesta = "buscando en google, "+cmd;
        window.open('https://www.google.com/search?q='+cmd);  
     }
     peticionCumplida = "si";
